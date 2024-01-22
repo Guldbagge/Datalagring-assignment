@@ -5,5 +5,5 @@ namespace Infrastructure.Repositories;
 
 public interface IUserRepository : IRepo<UserEntity>
 {
-
+    Task<List<UserEntity>> GetAllAsync();
 }

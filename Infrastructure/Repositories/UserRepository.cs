@@ -12,6 +12,7 @@ public class UserRepository(CustomerContext context) : Repo<UserEntity, Customer
 {
     private readonly CustomerContext _context = context;
 
+
     public override async Task<IEnumerable<UserEntity>> GetAsync()
     {
         try
@@ -56,4 +57,24 @@ public class UserRepository(CustomerContext context) : Repo<UserEntity, Customer
 
         return null!;
     }
+
+
+    public async Task<List<UserEntity>> GetAllAsync()
+    {
+        try
+        {
+            var entities = await _context.Users.Include(i => i.Role).ToListAsync();
+            if (entities.Count != 0)
+            {
+                return entities;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.Log(ex.Message, "UserRepository.GetAllAsync()", LogTypes.Error);
+        }
+
+        return new List<UserEntity>();
+    }
+
 }

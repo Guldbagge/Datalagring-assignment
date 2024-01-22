@@ -13,3 +13,4 @@
 2024-01-22 10:01:07 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
 2024-01-22 11:53:20 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
 2024-01-22 11:53:20 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-01-22 16:03:48 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.

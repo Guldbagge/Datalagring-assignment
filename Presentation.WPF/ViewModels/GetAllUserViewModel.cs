@@ -1,25 +1,43 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Infrastructure.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Infrastructure.Repositories;
+using Shared.Utils;
 
-namespace Presentation.WPF.ViewModels;
-
-public class GetAllUserViewModel : ObservableObject
+namespace Presentation.WPF.ViewModels
 {
-    private List<UserEntity> _users;
-
-    public List<UserEntity> Users
+    public class GetAllUserViewModel : ObservableObject
     {
-        get { return _users; }
-        set
+        private readonly IUserRepository _userRepository;
+
+        public GetAllUserViewModel(IUserRepository userRepository)
         {
-            _users = value;
-            OnPropertyChanged(nameof(Users));
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+            LoadUsersAsync();
+        }
+
+        private async void LoadUsersAsync()
+        {
+            try
+            {
+                Users = await _userRepository.GetAllAsync();
+                Logger.Log("All users were retrieved successfully.", "GetAllUserViewModel.LoadUsersAsync()", LogTypes.Info);
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex.Message, "GetAllUserViewModel.LoadUsersAsync()", LogTypes.Error);
+            }
+        }
+
+        private List<UserEntity> _users;
+
+        public List<UserEntity> Users
+        {
+            get { return _users; }
+            set
+            {
+                _users = value;
+                OnPropertyChanged(nameof(Users));
+            }
         }
     }
 }
-

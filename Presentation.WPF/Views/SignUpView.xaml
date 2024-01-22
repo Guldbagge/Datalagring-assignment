@@ -9,10 +9,9 @@
              d:DataContext="{d:DesignInstance Type={x:Type viewmodels:SignUpViewModel}}"
              mc:Ignorable="d" 
              >
-    
-    <Grid>
+
+    <Grid Background="#007EA7">
         <StackPanel>
-            <TextBlock Text="Become a new Member" FontSize="18" Margin="0,0,0,20" />
 
             <Label Content="First Name" />
             <TextBox Text="{Binding Form.FirstName}" Padding="5" Margin="0,0,0,5" />

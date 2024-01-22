@@ -37,4 +37,5 @@ public partial class SignUpViewModel(IAuthService authService) : ObservableObjec
         }
         catch (Exception ex) { Logger.Log(ex.Message, "SignUpViewModel.SignUp()", LogTypes.Error); }
     }
+
 }

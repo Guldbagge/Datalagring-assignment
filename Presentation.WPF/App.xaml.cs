@@ -37,6 +37,8 @@ namespace Presentation.WPF
 
                 services.AddSingleton<MainViewModel>();
                 services.AddSingleton<MainWindow>();
+                services.AddSingleton<MainOptionsViewModel>();
+                services.AddSingleton<MainOptions>();
 
                 services.AddTransient<SignUpViewModel>();
                 services.AddTransient<SignUpView>();

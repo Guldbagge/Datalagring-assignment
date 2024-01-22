@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Presentation.WPF.Views.SignUpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Presentation.WPF.Views"
+             xmlns:viewmodels="clr-namespace:Presentation.WPF.ViewModels"
+             xmlns:models="clr-namespace:Presentation.WPF.Models"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodels:SignUpViewModel}}"
+             mc:Ignorable="d" 
+             >
+    
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Become a new Member" FontSize="18" Margin="0,0,0,20" />
+
+            <Label Content="First Name" />
+            <TextBox Text="{Binding Form.FirstName}" Padding="5" Margin="0,0,0,5" />
+
+            <Label Content="Last Name" />
+            <TextBox Text="{Binding Form.LastName}" Padding="5" Margin="0,0,0,5" />
+
+            <Label Content="Email Address" />
+            <TextBox Text="{Binding Form.Email}" Padding="5" Margin="0,0,0,5" />
+
+            <Label Content="Password" />
+            <TextBox Text="{Binding Form.Password}" Padding="5" Margin="0,0,0,5" />
+
+            <Label Content="Confirm Password" />
+            <TextBox Text="{Binding Form.ConfirmPassword}" Padding="5" Margin="0,0,0,20" />
+
+            <CheckBox IsChecked="{Binding Form.AcceptsUserTerms}" Content="I accept the terms and conditions for this application." Margin="0,0,0,20" />
+            <CheckBox IsChecked="{Binding Form.AcceptsMarketingTerms}" Content="I want to receive newsletters and marketing campaigns." Margin="0,0,0,30" />
+
+            <Button Command="{Binding SignUpCommand}" Content="Sign Up" Padding="8" />
+        </StackPanel>        
+    </Grid>
+</UserControl>

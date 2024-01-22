@@ -1,0 +1,11 @@
+2024-01-19 16:20:16 :: Repo.CreateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-01-19 16:25:28 :: Repo.CreateAsync() : _userRepository :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-01-19 16:25:28 :: SignUpViewModel.SignUp() :: Info :: User was not created successfully.
+2024-01-19 16:37:35 :: Repo.CreateAsync() : _userRepository :: Error :: The value of 'AuthEntity.UserId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+2024-01-19 16:37:35 :: SignUpViewModel.SignUp() :: Info :: User was not created successfully.
+2024-01-19 16:39:23 :: AuthService.SignUpAsync() :: Info :: User with hans@domain.com already exists.
+2024-01-19 16:39:23 :: SignUpViewModel.SignUp() :: Info :: User was not created successfully.
+2024-01-19 16:40:10 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-19 16:40:10 :: SignUpViewModel.SignUp() :: Info :: User was not created successfully.
+2024-01-19 16:43:19 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-19 16:43:19 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.

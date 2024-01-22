@@ -42,6 +42,8 @@ namespace Presentation.WPF
 
                 services.AddTransient<SignUpViewModel>();
                 services.AddTransient<SignUpView>();
+                services.AddTransient<GetAllUserViewModel>();
+                services.AddTransient<GetAllUserView>();
 
             }).Build();
         }

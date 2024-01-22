@@ -20,13 +20,28 @@ public partial class MainOptionsViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private void NavigateToSignUpDiver()
+    private void NavigateToSignUp()
     {
         var mainViewModel = _sp.GetRequiredService<MainViewModel>();
 
         if (mainViewModel != null)
         {
             mainViewModel.CurrentViewModel = _sp.GetRequiredService<SignUpViewModel>();
+        }
+        else
+        {
+            Debug.WriteLine("MainViewModel is null. Unable to set CurrentViewModel.");
+        }
+    }
+
+    [RelayCommand]
+    private void NavigateToGetAllUser()
+    {
+        var mainViewModel = _sp.GetRequiredService<MainViewModel>();
+
+        if (mainViewModel != null)
+        {
+            mainViewModel.CurrentViewModel = _sp.GetRequiredService<GetAllUserViewModel>();
         }
         else
         {

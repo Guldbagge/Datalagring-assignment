@@ -9,7 +9,7 @@
         d:DataContext="{d:DesignInstance Type={x:Type viewmodels:MainViewModel}}"
         mc:Ignorable="d"
         Title="" Height="650" Width="380">
-    <Grid Margin=" 10"> 
+    <Grid> 
 
         <ContentControl Content="{Binding CurrentViewModel}">
             <ContentControl.Resources>
@@ -20,6 +20,11 @@
                 <DataTemplate DataType="{x:Type viewmodels:SignUpViewModel}">
                     <views:SignUpView />
                 </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:GetAllUserViewModel}">
+                    <views:GetAllUserView />
+                </DataTemplate>
+                
             </ContentControl.Resources>
         </ContentControl>
         

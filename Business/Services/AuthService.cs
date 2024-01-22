@@ -71,4 +71,21 @@ public class AuthService(IUserRepository userRepository, IAuthRepository authRep
 
         return false;
     }
+
+    //public async Task<List<UserEntity>> GetAllUsersAsync()
+    //{
+    //    try
+    //    {
+    //        var users = await _userRepository.GetAllAsync(); // Antag att du har en GetAllAsync-metod i IUserRepository för att hämta alla användare.
+
+    //        Logger.Log("All users were retrieved successfully.", "AuthService.GetAllUsersAsync()", LogTypes.Info);
+    //        return users;
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Logger.Log(ex.Message, "AuthService.GetAllUsersAsync()", LogTypes.Error);
+    //        return new List<UserEntity>();
+    //    }
+    //}
+
 }

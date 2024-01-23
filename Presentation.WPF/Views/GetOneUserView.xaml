@@ -10,10 +10,10 @@
              d:DataContext="{d:DesignInstance Type={x:Type viewmodels:GetOneUserViewModel}}"
              
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="380">
     <Grid Background="#007EA7">
         <StackPanel Margin="0,30,0,30">
-
+            <Button Command="{Binding GoBackCommand}" Content="Go Back to Main Menu" Margin="10,0,0,30" />
             <Label Content="Email Address" />
             <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
             <TextBlock Text="Enter email" Foreground="Gray" />

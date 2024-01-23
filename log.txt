@@ -24,3 +24,6 @@
 2024-01-23 10:27:04 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
 2024-01-23 10:30:36 :: AuthService.GetUserByEmailAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
 2024-01-23 10:30:36 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
+2024-01-23 11:17:54 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 11:21:40 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 11:26:57 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.

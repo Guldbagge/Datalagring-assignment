@@ -1,7 +1,10 @@
 ﻿using Business.Interfaces;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.DependencyInjection;
 using Shared.Utils;
+using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace Presentation.WPF.ViewModels
@@ -9,11 +12,15 @@ namespace Presentation.WPF.ViewModels
     public class GetOneUserViewModel : ObservableObject
     {
         private readonly IAuthService _authService;
+        private readonly IServiceProvider _serviceProvider; 
 
-        public GetOneUserViewModel(IAuthService authService)
+        public GetOneUserViewModel(IAuthService authService, IServiceProvider serviceProvider)
         {
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+
             GetUserCommand = new AsyncRelayCommand(GetUserAsync);
+            GoBackCommand = new RelayCommand(GoBack);
         }
 
         private string _email;
@@ -52,6 +59,9 @@ namespace Presentation.WPF.ViewModels
 
         public IAsyncRelayCommand GetUserCommand { get; }
 
+        // Nytt kommando för att gå tillbaka till huvudmenyn
+        public IRelayCommand GoBackCommand { get; }
+
         private async Task GetUserAsync()
         {
             try
@@ -84,6 +94,12 @@ namespace Presentation.WPF.ViewModels
             {
                 Logger.Log(ex.Message, "GetOneUserViewModel.GetUserAsync()", LogTypes.Error);
             }
+        }
+
+        private void GoBack()
+        {
+            var mainViewModel = _serviceProvider.GetService<MainViewModel>();
+            mainViewModel.CurrentViewModel = _serviceProvider.GetService<MainOptionsViewModel>();
         }
     }
 }

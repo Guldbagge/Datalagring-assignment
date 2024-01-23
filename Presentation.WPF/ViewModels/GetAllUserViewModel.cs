@@ -8,6 +8,7 @@ namespace Presentation.WPF.ViewModels
     public class GetAllUserViewModel : ObservableObject
     {
         private readonly IUserRepository _userRepository;
+        private readonly IServiceProvider _serviceProvider;
 
         public GetAllUserViewModel(IUserRepository userRepository)
         {
@@ -39,5 +40,6 @@ namespace Presentation.WPF.ViewModels
                 OnPropertyChanged(nameof(Users));
             }
         }
+
     }
 }

@@ -13,25 +13,25 @@
     <Grid Background="#007EA7">
         <StackPanel Margin="0,30,0,30">
 
-            <Label Content="First Name" />
+            <Label Content="First Name" Foreground="White" />
             <TextBox Text="{Binding Form.FirstName}" Padding="5" Margin="10,0,10,5" />
 
-            <Label Content="Last Name" />
+            <Label Content="Last Name" Foreground="White" />
             <TextBox Text="{Binding Form.LastName}" Padding="5" Margin="10,0,10,5" />
 
-            <Label Content="Email Address" />
+            <Label Content="Email Address" Foreground="White" />
             <TextBox Text="{Binding Form.Email}" Padding="5" Margin="10,0,10,5" />
 
-            <Label Content="Password" />
+            <Label Content="Password" Foreground="White" />
             <TextBox Text="{Binding Form.Password}" Padding="5" Margin="10,0,10,5" />
 
-            <Label Content="Confirm Password" />
+            <Label Content="Confirm Password" Foreground="White" />
             <TextBox Text="{Binding Form.ConfirmPassword}" Padding="5" Margin="10,0,10,20" />
 
-            <CheckBox IsChecked="{Binding Form.AcceptsUserTerms}" Content="I accept the terms and conditions for this application." Margin="10,0,10,20" />
-            <CheckBox IsChecked="{Binding Form.AcceptsMarketingTerms}" Content="I want to receive newsletters and marketing campaigns." Margin="10,0,10,20" />
+            <CheckBox IsChecked="{Binding Form.AcceptsUserTerms}" Content="I accept the terms and conditions for this application." Foreground="White" Margin="10,0,10,20" />
+            <CheckBox IsChecked="{Binding Form.AcceptsMarketingTerms}" Content="I want to receive newsletters and marketing campaigns." Foreground="White" Margin="10,0,10,20" />
 
-            <Button Command="{Binding SignUpCommand}" Content="Sign Up" Padding="8" />
-        </StackPanel>        
+            <Button Command="{Binding SignUpCommand}" Content="Sign Up" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,0,10,20" />
+        </StackPanel>
     </Grid>
 </UserControl>

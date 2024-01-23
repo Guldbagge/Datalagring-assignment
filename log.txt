@@ -31,3 +31,9 @@
 2024-01-23 14:26:22 :: AuthService.RemoveUserAsync() :: Info :: User with email zelda@domain.com was successfully removed.
 2024-01-23 14:26:22 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email zelda@domain.com was successfully removed.
 2024-01-23 14:26:29 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 15:49:22 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 16:04:16 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-23 16:04:16 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-01-23 16:04:45 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 16:06:18 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 16:07:55 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.

@@ -16,7 +16,7 @@
                 <DataTemplate DataType="{x:Type viewmodels:MainOptionsViewModel}">
                     <views:MainOptions />
                 </DataTemplate>
-                
+
                 <DataTemplate DataType="{x:Type viewmodels:SignUpViewModel}">
                     <views:SignUpView />
                 </DataTemplate>
@@ -24,7 +24,11 @@
                 <DataTemplate DataType="{x:Type viewmodels:GetAllUserViewModel}">
                     <views:GetAllUserView />
                 </DataTemplate>
-                
+
+                <DataTemplate DataType="{x:Type viewmodels:GetOneUserViewModel}">
+                    <views:GetOneUserView />
+                </DataTemplate>
+
             </ContentControl.Resources>
         </ContentControl>
         

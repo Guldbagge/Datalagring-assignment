@@ -14,3 +14,13 @@
 2024-01-22 11:53:20 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
 2024-01-22 11:53:20 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
 2024-01-22 16:03:48 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 08:09:17 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 08:15:28 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 08:23:29 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 08:24:41 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 09:20:13 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-23 10:21:29 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
+2024-01-23 10:27:04 :: AuthService.GetUserByEmailAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
+2024-01-23 10:27:04 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
+2024-01-23 10:30:36 :: AuthService.GetUserByEmailAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
+2024-01-23 10:30:36 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.

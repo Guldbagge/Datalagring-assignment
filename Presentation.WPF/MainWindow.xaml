@@ -29,6 +29,14 @@
                     <views:GetOneUserView />
                 </DataTemplate>
 
+                <DataTemplate DataType="{x:Type viewmodels:UpdateUserViewModel}">
+                    <views:UpdateUserView />
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:DeleteUserViewModel}">
+                    <views:DeleteUserView />
+                </DataTemplate>
+
             </ContentControl.Resources>
         </ContentControl>
         

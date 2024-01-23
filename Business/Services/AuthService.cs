@@ -96,7 +96,7 @@ public class AuthService(IUserRepository userRepository, IAuthRepository authRep
         }
     }
 
-        public async Task<List<UserEntity>> GetAllUsersAsync()
+    public async Task<List<UserEntity>> GetAllUsersAsync()
     {
         try
         {
@@ -111,5 +111,46 @@ public class AuthService(IUserRepository userRepository, IAuthRepository authRep
             return new List<UserEntity>();
         }
     }
+
+    public async Task<bool> RemoveUserAsync(string email)
+    {
+        try
+        {
+            var user = await _userRepository.GetAsync(x => x.Email == email);
+
+            if (user != null)
+            {
+                var result = await _userRepository.DeleteAsync(x => x.Email == email);
+
+                if (result)
+                {
+                    // Optionally, delete associated authentication entity if needed
+                    await _authRepository.DeleteAsync(x => x.UserId == user.Id);
+
+                    Logger.Log($"User with email {email} was successfully removed.", "AuthService.RemoveUserAsync()", LogTypes.Info);
+                    return true;
+                }
+                else
+                {
+                    // Log an error if deletion fails
+                    Logger.Log($"Failed to remove user with email {email}.", "AuthService.RemoveUserAsync()", LogTypes.Error);
+                    return false;
+                }
+            }
+            else
+            {
+                Logger.Log($"User with email {email} was not found.", "AuthService.RemoveUserAsync()", LogTypes.Info);
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.Log(ex.Message, "AuthService.RemoveUserAsync()", LogTypes.Error);
+            return false;
+        }
+    }
+
+
+
 
 }

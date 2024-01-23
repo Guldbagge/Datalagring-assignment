@@ -63,4 +63,34 @@ public partial class MainOptionsViewModel : ObservableObject
             Debug.WriteLine("MainViewModel is null. Unable to set CurrentViewModel.");
         }
     }
+
+    [RelayCommand]
+    private void NavigateToDeleteUser()
+    {
+        var mainViewModel = _sp.GetRequiredService<MainViewModel>();
+
+        if (mainViewModel != null)
+        {
+            mainViewModel.CurrentViewModel = _sp.GetRequiredService<DeleteUserViewModel>();
+        }
+        else
+        {
+            Debug.WriteLine("MainViewModel is null. Unable to set CurrentViewModel.");
+        }
+    }
+
+    //[RelayCommand]
+    //private void NavigateToUpdateUser()
+    //{
+    //    var mainViewModel = _sp.GetRequiredService<MainViewModel>();
+
+    //    if (mainViewModel != null)
+    //    {
+    //        mainViewModel.CurrentViewModel = _sp.GetRequiredService<UpdateUserViewModel>();
+    //    }
+    //    else
+    //    {
+    //        Debug.WriteLine("MainViewModel is null. Unable to set CurrentViewModel.");
+    //    }
+    //}
 }

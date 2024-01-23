@@ -46,6 +46,10 @@ namespace Presentation.WPF
                 services.AddTransient<GetAllUserView>();
                 services.AddTransient<GetOneUserViewModel>();
                 services.AddTransient<GetOneUserView>();
+                services.AddTransient<UpdateUserViewModel>();
+                services.AddTransient<UpdateUserView>();
+                services.AddTransient<DeleteUserViewModel>();
+                services.AddTransient<DeleteUserView>();
 
             }).Build();
         }

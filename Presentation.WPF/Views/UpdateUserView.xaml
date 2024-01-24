@@ -4,14 +4,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Presentation.WPF.Views"
-             
-              xmlns:viewmodels="clr-namespace:Presentation.WPF.ViewModels"
-              xmlns:models="clr-namespace:Presentation.WPF.Models"
-              d:DataContext="{d:DesignInstance Type={x:Type viewmodels:UpdateUserViewModel}}"
-             
+             xmlns:viewmodels="clr-namespace:Presentation.WPF.ViewModels"
+             xmlns:models="clr-namespace:Presentation.WPF.Models"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodels:UpdateUserViewModel}}"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="380">
-    <Grid>
-            
+    <Grid Background="#007EA7">
+        <StackPanel Margin="20">
+
+            <Label Content="User ID" Foreground="White" />
+            <TextBox Text="{Binding Form.Id}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="First Name" Foreground="White" />
+            <TextBox Text="{Binding Form.FirstName, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="Last Name" Foreground="White" />
+            <TextBox Text="{Binding Form.LastName, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="Email" Foreground="White" />
+            <TextBox Text="{Binding Form.Email, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="Password" Foreground="White" />
+            <TextBox Text="{Binding Form.Password, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="Confirm Password" Foreground="White" />
+            <TextBox Text="{Binding Form.ConfirmPassword, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+
+            <Button Command="{Binding UpdateUserCommand}" Content="Update User" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,20,10,0" />
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.Dtos;  // Make sure to include the correct namespace
 using Shared.Utils;
 using System;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace Presentation.WPF.ViewModels
     public class GetOneUserViewModel : ObservableObject
     {
         private readonly IAuthService _authService;
-        private readonly IServiceProvider _serviceProvider; 
+        private readonly IServiceProvider _serviceProvider;
 
         public GetOneUserViewModel(IAuthService authService, IServiceProvider serviceProvider)
         {
@@ -29,7 +30,7 @@ namespace Presentation.WPF.ViewModels
 
         public string Email
         {
-            get { return _email; }
+            get => _email;
             set
             {
                 _email = value;
@@ -39,7 +40,7 @@ namespace Presentation.WPF.ViewModels
 
         public string FirstName
         {
-            get { return _firstName; }
+            get => _firstName;
             set
             {
                 _firstName = value;
@@ -49,7 +50,7 @@ namespace Presentation.WPF.ViewModels
 
         public string LastName
         {
-            get { return _lastName; }
+            get => _lastName;
             set
             {
                 _lastName = value;
@@ -59,7 +60,6 @@ namespace Presentation.WPF.ViewModels
 
         public IAsyncRelayCommand GetUserCommand { get; }
 
-        // Nytt kommando för att gå tillbaka till huvudmenyn
         public IRelayCommand GoBackCommand { get; }
 
         private async Task GetUserAsync()
@@ -68,7 +68,8 @@ namespace Presentation.WPF.ViewModels
             {
                 if (!string.IsNullOrWhiteSpace(Email))
                 {
-                    var user = await _authService.GetUserByEmailAsync(Email);
+                    var getOneUserDto = new GetOneUserDto { Email = Email };
+                    var user = await _authService.GetUserByEmailAsync(getOneUserDto);
 
                     if (user != null)
                     {

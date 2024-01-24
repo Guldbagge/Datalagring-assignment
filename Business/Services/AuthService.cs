@@ -72,20 +72,20 @@ public class AuthService(IUserRepository userRepository, IAuthRepository authRep
         return false;
     }
 
-    public async Task<UserEntity> GetUserByEmailAsync(string email)
+    public async Task<UserEntity> GetUserByEmailAsync(GetOneUserDto getUserDto)
     {
         try
         {
-            var user = await _userRepository.GetAsync(x => x.Email == email);
+            var user = await _userRepository.GetAsync(x => x.Email == getUserDto.Email);
 
             if (user != null)
             {
-                Logger.Log($"User with email {email} was retrieved successfully.", "AuthService.GetUserByEmailAsync()", LogTypes.Info);
+                Logger.Log($"User with email {getUserDto.Email} was retrieved successfully.", "AuthService.GetUserByEmailAsync()", LogTypes.Info);
                 return user;
             }
             else
             {
-                Logger.Log($"User with email {email} was not found.", "AuthService.GetUserByEmailAsync()", LogTypes.Info);
+                Logger.Log($"User with email {getUserDto.Email} was not found.", "AuthService.GetUserByEmailAsync()", LogTypes.Info);
                 return null;
             }
         }
@@ -95,6 +95,7 @@ public class AuthService(IUserRepository userRepository, IAuthRepository authRep
             return null;
         }
     }
+
 
     public async Task<List<UserEntity>> GetAllUsersAsync()
     {
@@ -149,6 +150,52 @@ public class AuthService(IUserRepository userRepository, IAuthRepository authRep
             return false;
         }
     }
+
+    public async Task<bool> UpdateUserAsync(UpdateUserDto updateUserDto)
+    {
+        try
+        {
+            // Hämta den befintliga användaren för uppdatering
+            var existingUser = await _userRepository.GetAsync(x => x.Id == updateUserDto.Id);
+
+            if (existingUser != null)
+            {
+                // Uppdatera användarens egenskaper med värden från updateUserDto
+                existingUser.FirstName = updateUserDto.FirstName;
+                existingUser.LastName = updateUserDto.LastName;
+                existingUser.Email = updateUserDto.Email;
+                // ... andra egenskaper du vill uppdatera
+
+                // Använd UserRepository för att spara de uppdaterade uppgifterna
+                var updateResult = await _userRepository.UpdateAsync(x => x.Id == existingUser.Id, existingUser);
+
+                if (updateResult != null)
+                {
+                    Logger.Log($"User with email {existingUser.Email} was successfully updated.", "AuthService.UpdateUserAsync()", LogTypes.Info);
+                    return true;
+                }
+                else
+                {
+                    // Logga ett fel om uppdateringen misslyckas
+                    Logger.Log($"Failed to update user with email {existingUser.Email}.", "AuthService.UpdateUserAsync()", LogTypes.Error);
+                    return false;
+                }
+            }
+            else
+            {
+                Logger.Log($"User with id {updateUserDto.Id} was not found.", "AuthService.UpdateUserAsync()", LogTypes.Info);
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.Log(ex.Message, "AuthService.UpdateUserAsync()", LogTypes.Error);
+            return false;
+        }
+    }
+
+
+
 
 
 

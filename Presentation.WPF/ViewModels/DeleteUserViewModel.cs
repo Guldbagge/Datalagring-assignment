@@ -29,7 +29,7 @@ namespace Presentation.WPF.ViewModels
 
         public string Email
         {
-            get { return _email; }
+            get => _email;
             set
             {
                 _email = value;
@@ -39,7 +39,7 @@ namespace Presentation.WPF.ViewModels
 
         public string FirstName
         {
-            get { return _firstName; }
+            get => _firstName;
             set
             {
                 _firstName = value;
@@ -49,7 +49,7 @@ namespace Presentation.WPF.ViewModels
 
         public string LastName
         {
-            get { return _lastName; }
+            get => _lastName;
             set
             {
                 _lastName = value;
@@ -64,9 +64,6 @@ namespace Presentation.WPF.ViewModels
         {
             try
             {
-                // Anropa AuthService eller annan lämplig tjänst för att ta bort användaren
-                // Du kan använda _authService eller annan lämplig tjänst för att genomföra borttagningen.
-
                 var success = await _authService.RemoveUserAsync(Email);
 
                 if (success)
@@ -74,12 +71,10 @@ namespace Presentation.WPF.ViewModels
                     Logger.Log($"User with email {Email} was successfully removed.", "DeleteUserViewModel.DeleteUserAsync()", LogTypes.Info);
                     MessageBox.Show($"User with email {Email} was successfully removed.");
 
-                    // Efter borttagningen kanske du vill nollställa dina egenskaper, eller annan lämplig logik.
                     Email = string.Empty;
                     FirstName = string.Empty;
                     LastName = string.Empty;
 
-                    // Gå tillbaka till huvudmenyn
                     GoBack();
                 }
                 else

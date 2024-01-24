@@ -2,13 +2,14 @@
 using Infrastructure.Entities;
 using Infrastructure.Repositories;
 using Shared.Utils;
+using System;
+using System.Collections.Generic;
 
 namespace Presentation.WPF.ViewModels
 {
     public class GetAllUserViewModel : ObservableObject
     {
         private readonly IUserRepository _userRepository;
-        private readonly IServiceProvider _serviceProvider;
 
         public GetAllUserViewModel(IUserRepository userRepository)
         {
@@ -33,13 +34,12 @@ namespace Presentation.WPF.ViewModels
 
         public List<UserEntity> Users
         {
-            get { return _users; }
+            get => _users;
             set
             {
                 _users = value;
                 OnPropertyChanged(nameof(Users));
             }
         }
-
     }
 }

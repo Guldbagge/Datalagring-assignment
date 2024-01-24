@@ -8,6 +8,7 @@
              xmlns:models="clr-namespace:Presentation.WPF.Models"
              d:DataContext="{d:DesignInstance Type={x:Type viewmodels:SignUpViewModel}}"
              mc:Ignorable="d" 
+             
              >
 
     <Grid Background="#007EA7">

@@ -25,7 +25,7 @@ namespace Presentation.WPF
                 Logger.LogFilePath = @"c:\Education\Datalagring-assignment\log.txt";
 
                 services.AddDbContext<CustomerContext>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Education\Datalagring-assignment\Infrastructure\Data\customer_database.mdf;Integrated Security=True"));
-                services.AddDbContext<CustomerContext>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Education\Datalagring-assignment\Infrastructure\Data\productcatalog_database_df.mdf;Integrated Security=True"));
+                services.AddDbContext<ProductCatalogContext>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Education\Datalagring-assignment\Infrastructure\Data\productcatalog_database_df.mdf;Integrated Security=True"));
 
                 services.AddScoped<IUserRepository, UserRepository>();
                 services.AddScoped<IRoleRepository, RoleRepository>();
@@ -34,6 +34,7 @@ namespace Presentation.WPF
                 services.AddScoped<IProductRepository, ProductRepository>();
 
                 services.AddScoped<IAuthService, AuthService>();
+                services.AddScoped<IProductService, ProductService>();
 
                 services.AddSingleton<MainViewModel>();
                 services.AddSingleton<MainWindow>();
@@ -50,6 +51,8 @@ namespace Presentation.WPF
                 services.AddTransient<UpdateUserView>();
                 services.AddTransient<DeleteUserViewModel>();
                 services.AddTransient<DeleteUserView>();
+                services.AddTransient<AddProductViewModel>();
+                services.AddTransient<AddProductView>();
 
             }).Build();
         }

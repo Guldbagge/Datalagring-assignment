@@ -37,6 +37,10 @@
                     <views:DeleteUserView />
                 </DataTemplate>
 
+                <DataTemplate DataType="{x:Type viewmodels:AddProductViewModel}">
+                    <views:AddProductView />
+                </DataTemplate>
+
             </ContentControl.Resources>
         </ContentControl>
         

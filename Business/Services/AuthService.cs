@@ -4,200 +4,194 @@ using Infrastructure.Entities;
 using Infrastructure.Repositories;
 using Shared.Dtos;
 using Shared.Utils;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace Business.Services;
-
-public class AuthService(IUserRepository userRepository, IAuthRepository authRepository, IRoleRepository roleRepository) : IAuthService
+namespace Business.Services
 {
-    private readonly IUserRepository _userRepository = userRepository;
-    private readonly IAuthRepository _authRepository = authRepository;
-    private readonly IRoleRepository _roleRepository = roleRepository;
-
-
-    public async Task<bool> SignUpAsync(SignUpDto signUpDto)
+    public class AuthService : IAuthService
     {
-        try
+        private readonly IUserRepository _userRepository;
+        private readonly IAuthRepository _authRepository;
+        private readonly IRoleRepository _roleRepository;
+
+        public AuthService(IUserRepository userRepository, IAuthRepository authRepository, IRoleRepository roleRepository)
         {
-            if (! await CheckIfUserExistsAsync(signUpDto.Email))
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+            _authRepository = authRepository ?? throw new ArgumentNullException(nameof(authRepository));
+            _roleRepository = roleRepository ?? throw new ArgumentNullException(nameof(roleRepository));
+        }
+
+        public async Task<bool> SignUpAsync(SignUpDto signUpDto)
+        {
+            try
             {
-                var (userEntity, authEntity) = UserFactory.Create(signUpDto);
-                
-                if (userEntity != null && authEntity != null)
+                if (!await CheckIfUserExistsAsync(signUpDto.Email))
                 {
-                    var roleEntity = await _roleRepository.GetAsync(x => x.RoleName == "Standard User");
-                    if (roleEntity != null)
+                    var (userEntity, authEntity) = UserFactory.Create(signUpDto);
+
+                    if (userEntity != null && authEntity != null)
                     {
-                        userEntity.RoleId = roleEntity.Id;
-                        var result = await CreateUserAsync(userEntity, authEntity);
-                        return result;
+                        var roleEntity = await _roleRepository.GetAsync(x => x.RoleName == "Standard User");
+
+                        if (roleEntity != null)
+                        {
+                            userEntity.RoleId = roleEntity.Id;
+                            var result = await CreateUserAsync(userEntity, authEntity);
+                            return result;
+                        }
                     }
                 }
             }
-        }
-        catch (Exception ex) { Logger.Log(ex.Message, "AuthService.SignUpAsync()", LogTypes.Error); }
-        return false;
-    }
-
-
-
-    public async Task<bool> CheckIfUserExistsAsync(string email)
-    {
-        if (await _userRepository.ExistsAsync(x => x.Email == email))
-        {
-            Logger.Log($"User with {email} already exists.", "AuthService.SignUpAsync()", LogTypes.Info);
-            return true;
+            catch (Exception ex) { Logger.Log(ex.Message, "AuthService.SignUpAsync()", LogTypes.Error); }
+            return false;
         }
 
-        return false;
-    }
-
-    public async Task<bool> CreateUserAsync(UserEntity userEntity, AuthEntity authEntity)
-    {
-        userEntity = await _userRepository.CreateAsync(userEntity, nameof(_userRepository));
-        if (userEntity != null)
+        public async Task<bool> CheckIfUserExistsAsync(string email)
         {
-            if (userEntity.Id > 0)
+            if (await _userRepository.ExistsAsync(x => x.Email == email))
             {
-                authEntity.UserId = userEntity.Id;
+                Logger.Log($"User with {email} already exists.", "AuthService.SignUpAsync()", LogTypes.Info);
+                return true;
+            }
 
-                var result = await _authRepository.CreateAsync(authEntity, nameof(_userRepository));
-                if (result != null)
+            return false;
+        }
+
+        public async Task<bool> CreateUserAsync(UserEntity userEntity, AuthEntity authEntity)
+        {
+            userEntity = await _userRepository.CreateAsync(userEntity, nameof(_userRepository));
+            if (userEntity != null)
+            {
+                if (userEntity.Id > 0)
                 {
-                    Logger.Log("A user was created successfully.", "AuthService.SignUpAsync()", LogTypes.Info);
-                    return true;
+                    authEntity.UserId = userEntity.Id;
+
+                    var result = await _authRepository.CreateAsync(authEntity, nameof(_userRepository));
+                    if (result != null)
+                    {
+                        Logger.Log("A user was created successfully.", "AuthService.SignUpAsync()", LogTypes.Info);
+                        return true;
+                    }
                 }
             }
+
+            return false;
         }
 
-        return false;
-    }
-
-    public async Task<UserEntity> GetUserByEmailAsync(GetOneUserDto getUserDto)
-    {
-        try
+        public async Task<UserEntity> GetUserByEmailAsync(GetOneUserDto getUserDto)
         {
-            var user = await _userRepository.GetAsync(x => x.Email == getUserDto.Email);
+            try
+            {
+                var user = await _userRepository.GetAsync(x => x.Email == getUserDto.Email);
 
-            if (user != null)
-            {
-                Logger.Log($"User with email {getUserDto.Email} was retrieved successfully.", "AuthService.GetUserByEmailAsync()", LogTypes.Info);
-                return user;
+                if (user != null)
+                {
+                    Logger.Log($"User with email {getUserDto.Email} was retrieved successfully.", "AuthService.GetUserByEmailAsync()", LogTypes.Info);
+                    return user;
+                }
+                else
+                {
+                    Logger.Log($"User with email {getUserDto.Email} was not found.", "AuthService.GetUserByEmailAsync()", LogTypes.Info);
+                    return null;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Logger.Log($"User with email {getUserDto.Email} was not found.", "AuthService.GetUserByEmailAsync()", LogTypes.Info);
+                Logger.Log(ex.Message, "AuthService.GetUserByEmailAsync()", LogTypes.Error);
                 return null;
             }
         }
-        catch (Exception ex)
+
+        public async Task<List<UserEntity>> GetAllUsersAsync()
         {
-            Logger.Log(ex.Message, "AuthService.GetUserByEmailAsync()", LogTypes.Error);
-            return null;
-        }
-    }
-
-
-    public async Task<List<UserEntity>> GetAllUsersAsync()
-    {
-        try
-        {
-            var users = await _userRepository.GetAllAsync(); // Antag att du har en GetAllAsync-metod i IUserRepository för att hämta alla användare.
-
-            Logger.Log("All users were retrieved successfully.", "AuthService.GetAllUsersAsync()", LogTypes.Info);
-            return users;
-        }
-        catch (Exception ex)
-        {
-            Logger.Log(ex.Message, "AuthService.GetAllUsersAsync()", LogTypes.Error);
-            return new List<UserEntity>();
-        }
-    }
-
-    public async Task<bool> RemoveUserAsync(string email)
-    {
-        try
-        {
-            var user = await _userRepository.GetAsync(x => x.Email == email);
-
-            if (user != null)
+            try
             {
-                var result = await _userRepository.DeleteAsync(x => x.Email == email);
+                var users = await _userRepository.GetAllAsync();
 
-                if (result)
+                Logger.Log("All users were retrieved successfully.", "AuthService.GetAllUsersAsync()", LogTypes.Info);
+                return users;
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex.Message, "AuthService.GetAllUsersAsync()", LogTypes.Error);
+                return new List<UserEntity>();
+            }
+        }
+
+        public async Task<bool> RemoveUserAsync(string email)
+        {
+            try
+            {
+                var user = await _userRepository.GetAsync(x => x.Email == email);
+
+                if (user != null)
                 {
-                    // Optionally, delete associated authentication entity if needed
-                    await _authRepository.DeleteAsync(x => x.UserId == user.Id);
+                    var result = await _userRepository.DeleteAsync(x => x.Email == email);
 
-                    Logger.Log($"User with email {email} was successfully removed.", "AuthService.RemoveUserAsync()", LogTypes.Info);
-                    return true;
+                    if (result)
+                    {
+                        await _authRepository.DeleteAsync(x => x.UserId == user.Id);
+
+                        Logger.Log($"User with email {email} was successfully removed.", "AuthService.RemoveUserAsync()", LogTypes.Info);
+                        return true;
+                    }
+                    else
+                    {
+                        Logger.Log($"Failed to remove user with email {email}.", "AuthService.RemoveUserAsync()", LogTypes.Error);
+                        return false;
+                    }
                 }
                 else
                 {
-                    // Log an error if deletion fails
-                    Logger.Log($"Failed to remove user with email {email}.", "AuthService.RemoveUserAsync()", LogTypes.Error);
+                    Logger.Log($"User with email {email} was not found.", "AuthService.RemoveUserAsync()", LogTypes.Info);
                     return false;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Logger.Log($"User with email {email} was not found.", "AuthService.RemoveUserAsync()", LogTypes.Info);
+                Logger.Log(ex.Message, "AuthService.RemoveUserAsync()", LogTypes.Error);
                 return false;
             }
         }
-        catch (Exception ex)
-        {
-            Logger.Log(ex.Message, "AuthService.RemoveUserAsync()", LogTypes.Error);
-            return false;
-        }
-    }
 
-    public async Task<bool> UpdateUserAsync(UpdateUserDto updateUserDto)
-    {
-        try
+        public async Task<bool> UpdateUserAsync(UpdateUserDto updateUserDto)
         {
-            // Hämta den befintliga användaren för uppdatering
-            var existingUser = await _userRepository.GetAsync(x => x.Id == updateUserDto.Id);
-
-            if (existingUser != null)
+            try
             {
-                // Uppdatera användarens egenskaper med värden från updateUserDto
-                existingUser.FirstName = updateUserDto.FirstName;
-                existingUser.LastName = updateUserDto.LastName;
-                existingUser.Email = updateUserDto.Email;
-                // ... andra egenskaper du vill uppdatera
+                var existingUser = await _userRepository.GetAsync(x => x.Id == updateUserDto.Id);
 
-                // Använd UserRepository för att spara de uppdaterade uppgifterna
-                var updateResult = await _userRepository.UpdateAsync(x => x.Id == existingUser.Id, existingUser);
-
-                if (updateResult != null)
+                if (existingUser != null)
                 {
-                    Logger.Log($"User with email {existingUser.Email} was successfully updated.", "AuthService.UpdateUserAsync()", LogTypes.Info);
-                    return true;
+                    existingUser.FirstName = updateUserDto.FirstName;
+                    existingUser.LastName = updateUserDto.LastName;
+                    existingUser.Email = updateUserDto.Email;
+
+                    var updateResult = await _userRepository.UpdateAsync(x => x.Id == existingUser.Id, existingUser);
+
+                    if (updateResult != null)
+                    {
+                        Logger.Log($"User with email {existingUser.Email} was successfully updated.", "AuthService.UpdateUserAsync()", LogTypes.Info);
+                        return true;
+                    }
+                    else
+                    {
+                        Logger.Log($"Failed to update user with email {existingUser.Email}.", "AuthService.UpdateUserAsync()", LogTypes.Error);
+                        return false;
+                    }
                 }
                 else
                 {
-                    // Logga ett fel om uppdateringen misslyckas
-                    Logger.Log($"Failed to update user with email {existingUser.Email}.", "AuthService.UpdateUserAsync()", LogTypes.Error);
+                    Logger.Log($"User with id {updateUserDto.Id} was not found.", "AuthService.UpdateUserAsync()", LogTypes.Info);
                     return false;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Logger.Log($"User with id {updateUserDto.Id} was not found.", "AuthService.UpdateUserAsync()", LogTypes.Info);
+                Logger.Log(ex.Message, "AuthService.UpdateUserAsync()", LogTypes.Error);
                 return false;
             }
         }
-        catch (Exception ex)
-        {
-            Logger.Log(ex.Message, "AuthService.UpdateUserAsync()", LogTypes.Error);
-            return false;
-        }
     }
-
-
-
-
-
-
-
 }

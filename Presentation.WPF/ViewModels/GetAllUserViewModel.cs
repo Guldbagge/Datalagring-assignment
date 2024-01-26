@@ -4,6 +4,8 @@ using Infrastructure.Repositories;
 using Shared.Utils;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace Presentation.WPF.ViewModels
 {
@@ -14,20 +16,26 @@ namespace Presentation.WPF.ViewModels
         public GetAllUserViewModel(IUserRepository userRepository)
         {
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
-            LoadUsersAsync();
+            _ = LoadUsersAsync();
         }
 
-        private async void LoadUsersAsync()
+        private async Task LoadUsersAsync()
         {
             try
             {
                 Users = await _userRepository.GetAllAsync();
-                Logger.Log("All users were retrieved successfully.", "GetAllUserViewModel.LoadUsersAsync()", LogTypes.Info);
+                ShowMessageToUser("The entire user list has been retrieved successfully.");
             }
             catch (Exception ex)
             {
                 Logger.Log(ex.Message, "GetAllUserViewModel.LoadUsersAsync()", LogTypes.Error);
+                ShowMessageToUser("An error occurred while retrieving the user list. Please try again.");
             }
+        }
+
+        private void ShowMessageToUser(string message)
+        {
+            MessageBox.Show(message, "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private List<UserEntity> _users;

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Presentation.WPF.Views.AddProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Presentation.WPF.Views"
+             xmlns:viewmodels="clr-namespace:Presentation.WPF.ViewModels"
+             xmlns:models="clr-namespace:Presentation.WPF.Models"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodels:AddProductViewModel}}"
+             mc:Ignorable="d" 
+             >
+
+    <Grid Background="#007EA7">
+        <StackPanel Margin="0,30,0,30">
+
+            <Label Content="Article Number" Foreground="White" />
+            <TextBox Text="{Binding Form.ArticleNumber}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="Title" Foreground="White" />
+            <TextBox Text="{Binding Form.Title}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="Description" Foreground="White" />
+            <TextBox Text="{Binding Form.Description}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="Price" Foreground="White" />
+            <TextBox Text="{Binding Form.Price}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="Category Name" Foreground="White" />
+            <TextBox Text="{Binding Form.CategoryName}" Padding="5" Margin="10,0,10,20" />
+
+            <Button Command="{Binding AddProductCommand}" Content="Add Product" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,0,10,20" />
+        </StackPanel>
+    </Grid>
+</UserControl>

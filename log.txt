@@ -72,3 +72,156 @@
 2024-01-24 12:39:40 :: AuthService.UpdateUserAsync() :: Info :: User with email karl@domain.com was successfully updated.
 2024-01-24 12:39:40 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
 2024-01-24 12:40:06 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-24 13:55:01 :: AuthService.GetUserByEmailAsync() :: Info :: User with email edvin@domain.com was not found.
+2024-01-24 13:55:01 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email edvin@domain.com was not found.
+2024-01-24 13:55:08 :: AuthService.GetUserByEmailAsync() :: Info :: User with email karl@domain.com was retrieved successfully.
+2024-01-24 13:55:08 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email karl@domain.com was retrieved successfully.
+2024-01-24 13:55:41 :: AuthService.GetUserByEmailAsync() :: Info :: User with email karl@domain.com was retrieved successfully.
+2024-01-24 13:55:41 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email karl@domain.com was retrieved successfully.
+2024-01-24 13:56:18 :: AuthService.GetUserByEmailAsync() :: Info :: User with email karl@domain.com was retrieved successfully.
+2024-01-24 13:56:18 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email karl@domain.com was retrieved successfully.
+2024-01-24 15:22:01 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-24 15:22:01 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-01-24 15:23:09 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 3
+2024-01-24 15:23:10 :: AuthService.UpdateUserAsync() :: Info :: User with email 1234 was successfully updated.
+2024-01-24 15:23:10 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-01-24 15:24:06 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 3
+2024-01-24 15:24:07 :: AuthService.UpdateUserAsync() :: Info :: User with email 12345 was successfully updated.
+2024-01-24 15:24:07 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-01-24 15:24:51 :: AuthService.GetUserByEmailAsync() :: Info :: User with email 123 was retrieved successfully.
+2024-01-24 15:24:51 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email 123 was retrieved successfully.
+2024-01-24 15:24:57 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-24 15:25:19 :: AuthService.RemoveUserAsync() :: Info :: User with email 123 was successfully removed.
+2024-01-24 15:25:19 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email 123 was successfully removed.
+2024-01-24 15:25:43 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-24 15:25:43 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-01-24 15:26:29 :: AuthService.RemoveUserAsync() :: Info :: User with email 12345 was successfully removed.
+2024-01-24 15:26:29 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email 12345 was successfully removed.
+2024-01-24 15:26:38 :: AuthService.RemoveUserAsync() :: Info :: User with email rrr was successfully removed.
+2024-01-24 15:26:38 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email rrr was successfully removed.
+2024-01-24 15:26:42 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-24 16:13:19 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-24 16:15:59 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-24 16:23:27 :: GetAllUserViewModel.LoadUsersAsync() :: Info :: All users were retrieved successfully.
+2024-01-25 17:03:38 :: Repo.DeleteAsync() :: Error :: An attempt to attach an auto-named database for file C:\Projects\EFC\Infrastructure\Data\productcatalog_database_df.mdf failed. A database with the same name exists, or specified file cannot be opened, or it is located on UNC share.
+2024-01-25 17:03:38 :: Repo.GetAsync() :: Error :: An attempt to attach an auto-named database for file C:\Projects\EFC\Infrastructure\Data\productcatalog_database_df.mdf failed. A database with the same name exists, or specified file cannot be opened, or it is located on UNC share.
+2024-01-25 17:03:38 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-25 17:08:57 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 07:53:04 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:05:31 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:14:26 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:17:29 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:32:02 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=2, Title=ew, Description=dsg, Price=65, CategoryName=kaffe
+2024-01-26 08:32:03 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:34:29 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=dg, Description=dfh, Price=214, CategoryName=Kaffe
+2024-01-26 08:34:30 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:38:34 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=sdg, Description=dsg, Price=120, CategoryName=Kaffe
+2024-01-26 08:38:34 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:40:50 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=sdg, Description=sdg, Price=214, CategoryName=Kaffe
+2024-01-26 08:40:51 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:50:15 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=sdg, Description=sdg, Price=12, CategoryName=Kaffe
+2024-01-26 08:50:16 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:52:45 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=sdg, Description=dsg, Price=23, CategoryName=Kaffe
+2024-01-26 08:52:46 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:54:17 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=df, Description=dsg, Price=124, CategoryName=Kaffe
+2024-01-26 08:54:18 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 08:57:28 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=ds, Description=sdg, Price=32, CategoryName=Kaffe
+2024-01-26 08:57:29 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 09:00:03 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=2423, Title=sd, Description=sdg, Price=235, CategoryName=Kaffe
+2024-01-26 09:00:04 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 09:20:58 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 09:20:58 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=123, Title=sdg, Description=sdgh, Price=12, CategoryName=kaffe
+2024-01-26 09:20:59 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 09:20:59 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 09:25:21 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 09:25:21 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=12, Title=sdg, Description=dgs, Price=235, CategoryName=Kaffe
+2024-01-26 09:25:22 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 09:25:22 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 09:30:19 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 09:30:19 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=235, Title=sdg, Description=sdg, Price=345, CategoryName=dsg
+2024-01-26 09:30:20 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 09:30:20 :: ProductService.AddProductAsync() :: Info :: ProductEntity created successfully. ArticleNumber=235, Title=sdg, Description=sdg, Price=345, CategoryId=0
+2024-01-26 09:30:20 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 10:07:14 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 10:07:14 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=123, Title=dsg, Description=dsg, Price=346, CategoryName=Kaffe
+2024-01-26 10:07:14 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 10:07:14 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 10:14:34 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 10:14:34 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=123, Title=dsg, Description=sdg, Price=56, CategoryName=kaffe
+2024-01-26 10:14:34 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 10:14:34 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 10:17:25 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 10:17:25 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=35, Title=fh, Description=dfh, Price=346, CategoryName=kaffe
+2024-01-26 10:17:26 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 10:17:26 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 10:18:11 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 10:18:11 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=325, Title=dfg, Description=dfg, Price=436, CategoryName=Kaffe
+2024-01-26 10:18:12 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 10:18:12 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 10:21:41 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 10:21:41 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=213, Title=df, Description=sd, Price=325, CategoryName=Kaffe
+2024-01-26 10:21:42 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 10:21:42 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 10:45:16 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 10:45:17 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=24, Title=sd, Description=sd, Price=236, CategoryName=Kaffe
+2024-01-26 10:45:18 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 10:45:18 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 11:03:16 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 11:03:16 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=32, Title=sdg, Description=sdg, Price=567, CategoryName=gfj
+2024-01-26 11:03:16 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 11:03:16 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 11:14:18 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 11:14:18 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=235423, Title=sdg, Description=dsg, Price=646, CategoryName=Kaffe
+2024-01-26 11:14:18 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-26 11:14:19 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 11:14:19 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: False
+2024-01-26 11:14:19 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 11:21:40 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 11:21:40 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=12, Title=sdg, Description=dsg, Price=240, CategoryName=Kaffe
+2024-01-26 11:21:40 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-26 11:21:41 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 11:21:41 :: ProductService.AddProductAsync() :: Error :: Default category does not exist.
+2024-01-26 11:21:41 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: False
+2024-01-26 11:21:41 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 11:24:30 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 11:24:30 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=24, Title=xcb, Description=xcb, Price=346, CategoryName=Kaffe
+2024-01-26 11:24:30 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-26 11:24:31 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 11:24:31 :: ProductService.AddProductAsync() :: Error :: Category 'Kaffe' does not exist.
+2024-01-26 11:24:31 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: False
+2024-01-26 11:24:31 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 11:27:16 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 11:27:16 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=Kaffeböner, Description=gott, Price=120, CategoryName=Kaffe
+2024-01-26 11:27:16 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-26 11:27:17 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 11:27:17 :: ProductService.AddProductAsync() :: Info :: Category 'Kaffe' created.
+2024-01-26 11:27:17 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 1
+2024-01-26 11:27:17 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Infrastructure.Repositories.ProductRepository
+2024-01-26 11:27:17 :: _productRepository :: Info :: Before SaveChangesAsync - ArticleNumber=1, Title=Kaffeböner, Description=gott, Price=120, CategoryId=1
+2024-01-26 11:27:17 :: _productRepository :: Info :: After SaveChangesAsync - ArticleNumber=1, Title=Kaffeböner, Description=gott, Price=120, CategoryId=1
+2024-01-26 11:27:17 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-01-26 11:27:17 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: True
+2024-01-26 11:27:17 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.
+2024-01-26 11:29:48 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 11:29:48 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=2, Title=Gevalia, Description=Gott, Price=110, CategoryName=Kaffe
+2024-01-26 11:29:48 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-26 11:29:49 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 11:29:50 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 1
+2024-01-26 11:29:50 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Infrastructure.Repositories.ProductRepository
+2024-01-26 11:29:50 :: _productRepository :: Info :: Before SaveChangesAsync - ArticleNumber=2, Title=Gevalia, Description=Gott, Price=110, CategoryId=1
+2024-01-26 11:29:50 :: _productRepository :: Info :: After SaveChangesAsync - ArticleNumber=2, Title=Gevalia, Description=Gott, Price=110, CategoryId=1
+2024-01-26 11:29:50 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-01-26 11:29:50 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: True
+2024-01-26 11:29:50 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.
+2024-01-26 11:30:35 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 11:30:35 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=3, Title=Twinings, Description=Afternon, Price=120, CategoryName=Te
+2024-01-26 11:30:35 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-26 11:30:35 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 11:30:35 :: ProductService.AddProductAsync() :: Info :: Category 'Te' created.
+2024-01-26 11:30:35 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 2
+2024-01-26 11:30:35 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Infrastructure.Repositories.ProductRepository
+2024-01-26 11:30:35 :: _productRepository :: Info :: Before SaveChangesAsync - ArticleNumber=3, Title=Twinings, Description=Afternon, Price=120, CategoryId=2
+2024-01-26 11:30:35 :: _productRepository :: Info :: After SaveChangesAsync - ArticleNumber=3, Title=Twinings, Description=Afternon, Price=120, CategoryId=2
+2024-01-26 11:30:35 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-01-26 11:30:35 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: True
+2024-01-26 11:30:35 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.

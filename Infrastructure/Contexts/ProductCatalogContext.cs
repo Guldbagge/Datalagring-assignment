@@ -21,7 +21,7 @@ public partial class ProductCatalogContext : DbContext
     public virtual DbSet<Product> Products { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Projects\\EFC\\Infrastructure\\Data\\productcatalog_database_df.mdf;Integrated Security=True;Connect Timeout=30");
+        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Education\\Datalagring-assignment\\Infrastructure\\Data\\productcatalog_database_df.mdf;Integrated Security=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

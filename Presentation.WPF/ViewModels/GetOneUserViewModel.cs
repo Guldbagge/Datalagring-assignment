@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.DependencyInjection;
-using Shared.Dtos;  // Make sure to include the correct namespace
+using Shared.Dtos;
 using Shared.Utils;
 using System;
 using System.Threading.Tasks;

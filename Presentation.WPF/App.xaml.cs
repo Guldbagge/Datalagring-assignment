@@ -53,7 +53,10 @@ namespace Presentation.WPF
                 services.AddTransient<DeleteUserView>();
                 services.AddTransient<AddProductViewModel>();
                 services.AddTransient<AddProductView>();
-
+                services.AddTransient<MainOptionsProductViewModel>();
+                services.AddTransient<MainOptionsProductView>();
+                services.AddTransient<MainOptionsOrderViewModel>();
+                services.AddTransient<MainOptionsOrderView>();
             }).Build();
         }
 

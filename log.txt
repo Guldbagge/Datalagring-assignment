@@ -225,3 +225,22 @@
 2024-01-26 11:30:35 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
 2024-01-26 11:30:35 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: True
 2024-01-26 11:30:35 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.
+2024-01-26 14:05:56 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 14:05:56 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=3, Title=Tepåsar, Description=många, Price=10, CategoryName=Te
+2024-01-26 14:05:56 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-26 14:05:59 :: ProductService.AddProductAsync() :: Info :: Product with ArticleNumber 3 already exists.
+2024-01-26 14:05:59 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: False
+2024-01-26 14:05:59 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-26 14:07:05 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-26 14:07:05 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=4, Title=Tepåsar, Description=Många, Price=10, CategoryName=Te
+2024-01-26 14:07:05 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-26 14:07:05 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-26 14:07:05 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 2
+2024-01-26 14:07:05 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Infrastructure.Repositories.ProductRepository
+2024-01-26 14:07:05 :: _productRepository :: Info :: Before SaveChangesAsync - ArticleNumber=4, Title=Tepåsar, Description=Många, Price=10, CategoryId=2
+2024-01-26 14:07:05 :: _productRepository :: Info :: After SaveChangesAsync - ArticleNumber=4, Title=Tepåsar, Description=Många, Price=10, CategoryId=2
+2024-01-26 14:07:05 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-01-26 14:07:05 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: True
+2024-01-26 14:07:05 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.
+2024-01-26 14:08:33 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-26 14:08:33 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.

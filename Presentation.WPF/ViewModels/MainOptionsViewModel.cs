@@ -95,13 +95,27 @@ public partial class MainOptionsViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private void NavigateToAddProduct()
+    private void NavigateToProductOptions()
     {
         var mainViewModel = _sp.GetRequiredService<MainViewModel>();
 
         if (mainViewModel != null)
         {
-            mainViewModel.CurrentViewModel = _sp.GetRequiredService<AddProductViewModel>();
+            mainViewModel.CurrentViewModel = _sp.GetRequiredService<MainOptionsProductViewModel>();
+        }
+        else
+        {
+            Debug.WriteLine("MainViewModel is null. Unable to set CurrentViewModel.");
+        }
+    }
+    [RelayCommand]
+    private void NavigateToOrderOptions()
+    {
+        var mainViewModel = _sp.GetRequiredService<MainViewModel>();
+
+        if (mainViewModel != null)
+        {
+            mainViewModel.CurrentViewModel = _sp.GetRequiredService<MainOptionsOrderViewModel>();
         }
         else
         {

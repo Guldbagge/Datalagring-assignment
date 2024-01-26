@@ -35,7 +35,6 @@ namespace Business.Services
 
                         if (categoryEntity == null)
                         {
-                            // Create a new category if it does not exist
                             categoryEntity = new Category { CategoryName = addProductDto.CategoryName };
                             categoryEntity = await _categoryRepository.CreateAsync(categoryEntity, nameof(_categoryRepository));
 
@@ -44,7 +43,6 @@ namespace Business.Services
 
                         productEntity.CategoryId = categoryEntity.Id;
 
-                        // Log the CategoryId of the product entity
                         Logger.Log($"CategoryId of the product entity: {productEntity.CategoryId}", "ProductService.AddProductAsync()", LogTypes.Info);
 
                         var result = await CreateProductAsync(productEntity);
@@ -55,11 +53,6 @@ namespace Business.Services
             catch (Exception ex) { Logger.Log(ex.Message, "ProductService.AddProductAsync()", LogTypes.Error); }
             return false;
         }
-
-
-
-
-
 
         public async Task<bool> CheckIfProductExistsAsync(string articleNumber)
         {
@@ -72,19 +65,6 @@ namespace Business.Services
             return false;
         }
 
-        //public async Task<bool> CreateProductAsync(Product productEntity)
-        //{
-        //    productEntity = await _productRepository.CreateAsync(productEntity, nameof(_productRepository));
-        //    if (productEntity != null)
-        //    {
-        //        // Additional logic if needed
-        //        Logger.Log("A product was created successfully.", "ProductService.AddProductAsync()", LogTypes.Info);
-        //        return true;
-        //    }
-
-        //    return false;
-        //}
-
         public async Task<bool> CreateProductAsync(Product productEntity)
         {
             try
@@ -95,7 +75,6 @@ namespace Business.Services
 
                 if (productEntity != null)
                 {
-                    // Additional logic if needed
                     Logger.Log("A product was created successfully.", "ProductService.CreateProductAsync()", LogTypes.Info);
                     return true;
                 }
@@ -111,11 +90,5 @@ namespace Business.Services
 
             return false;
         }
-
-
-
-
-
-        // Add other methods similar to AuthService if needed...
     }
 }

@@ -15,7 +15,6 @@ public partial class ProductCatalogContext : DbContext
         : base(options)
     {
     }
-
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }

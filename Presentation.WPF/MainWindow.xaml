@@ -41,6 +41,14 @@
                     <views:AddProductView />
                 </DataTemplate>
 
+                <DataTemplate DataType="{x:Type viewmodels:MainOptionsProductViewModel}">
+                    <views:MainOptionsProductView />
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:MainOptionsOrderViewModel}">
+                    <views:MainOptionsOrderView />
+                </DataTemplate>
+
             </ContentControl.Resources>
         </ContentControl>
         

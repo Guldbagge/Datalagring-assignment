@@ -29,7 +29,7 @@ public class UpdateUserDtoFactory
         catch (Exception ex)
         {
             Logger.Log(ex.Message, "UpdateUserDtoFactory.Create()", LogTypes.Error);
-            throw; // Kasta undantaget igen så att det inte ignoreras
+            throw;
         }
     }
 }

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Presentation.WPF.Views.AddOrderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Presentation.WPF.Views"
+             
+             xmlns:viewmodels="clr-namespace:Presentation.WPF.ViewModels"
+             xmlns:models="clr-namespace:Presentation.WPF.Models"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodels:AddOrderViewModel}}"
+             
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="380">
+    <Grid Background="#007EA7">
+        <StackPanel Margin="0,30,0,30">
+
+            <Label Content="Article Number" Foreground="White" />
+            <TextBox Text="{Binding Form.ArticleNumber}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="User ID" Foreground="White" />
+            <TextBox Text="{Binding Form.UserId}" Padding="5" Margin="10,0,10,5" />
+
+            <Label Content="Quantity" Foreground="White" />
+            <TextBox Text="{Binding Form.Quantity}" Padding="5" Margin="10,0,10,20" />
+
+            <Button Command="{Binding PlaceOrderCommand}" Content="Place Order" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,0,10,20" />
+        </StackPanel>
+    </Grid>
+</UserControl>
+

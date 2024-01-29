@@ -48,6 +48,100 @@ namespace Infrastructure.Migrations
                     b.ToTable("Authentications");
                 });
 
+            modelBuilder.Entity("Infrastructure.Entities.BankSwishDetailsEntity", b =>
+                {
+                    b.Property<int>("DetailsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DetailsId"));
+
+                    b.Property<string>("BankInformation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SwishInformation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DetailsId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("BankSwishDetails");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.OrderEntity", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.OrderRowEntity", b =>
+                {
+                    b.Property<int>("OrderRowId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderRowId"));
+
+                    b.Property<string>("ArticleNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderRowId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderRow");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.ReviewFeedbackEntity", b =>
+                {
+                    b.Property<int>("FeedbackId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FeedbackId"));
+
+                    b.Property<string>("Feedback")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("FeedbackId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ReviewFeedbacks");
+                });
+
             modelBuilder.Entity("Infrastructure.Entities.RoleEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -101,11 +195,77 @@ namespace Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Infrastructure.Entities.UserTypeEntity", b =>
+                {
+                    b.Property<int>("UserTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserTypeId"));
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserTypeId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserTypes");
+                });
+
             modelBuilder.Entity("Infrastructure.Entities.AuthEntity", b =>
                 {
                     b.HasOne("Infrastructure.Entities.UserEntity", "User")
                         .WithOne("Authentication")
                         .HasForeignKey("Infrastructure.Entities.AuthEntity", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.BankSwishDetailsEntity", b =>
+                {
+                    b.HasOne("Infrastructure.Entities.UserEntity", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.OrderEntity", b =>
+                {
+                    b.HasOne("Infrastructure.Entities.UserEntity", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.OrderRowEntity", b =>
+                {
+                    b.HasOne("Infrastructure.Entities.OrderEntity", "Order")
+                        .WithMany("OrderRows")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.ReviewFeedbackEntity", b =>
+                {
+                    b.HasOne("Infrastructure.Entities.UserEntity", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -121,6 +281,22 @@ namespace Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.UserTypeEntity", b =>
+                {
+                    b.HasOne("Infrastructure.Entities.UserEntity", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Infrastructure.Entities.OrderEntity", b =>
+                {
+                    b.Navigation("OrderRows");
                 });
 
             modelBuilder.Entity("Infrastructure.Entities.RoleEntity", b =>

@@ -4,32 +4,55 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Diagnostics;
 
-namespace Presentation.WPF.ViewModels
+namespace Presentation.WPF.ViewModels;
+
+public partial class MainOptionsOrderViewModel : ObservableObject
 {
-    public class MainOptionsOrderViewModel : ObservableObject
+    private readonly IServiceProvider _serviceProvider;
+
+    public MainOptionsOrderViewModel(IServiceProvider serviceProvider)
     {
-        private readonly IServiceProvider _serviceProvider;
+        _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
 
-        public MainOptionsOrderViewModel(IServiceProvider serviceProvider)
+        GoBackCommand = new RelayCommand(GoBack);
+       
+    }
+
+    public IRelayCommand GoBackCommand { get; }
+
+    [RelayCommand]
+    private void NavigateToAddOrder()
+    {
+        try
         {
-            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+            var mainViewModel = _serviceProvider.GetService<MainViewModel>();
 
-            GoBackCommand = new RelayCommand(GoBack);
+            if (mainViewModel != null)
+            {
+                mainViewModel.CurrentViewModel = _serviceProvider.GetService<AddOrderViewModel>();
+            }
+            else
+            {
+                Debug.WriteLine("MainViewModel is null. Unable to set CurrentViewModel.");
+            }
         }
-
-        public IRelayCommand GoBackCommand { get; }
-
-        private void GoBack()
+        catch (Exception ex)
         {
-            try
-            {
-                var mainViewModel = _serviceProvider.GetService<MainViewModel>();
-                mainViewModel.CurrentViewModel = _serviceProvider.GetService<MainOptionsViewModel>();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"An error occurred while navigating back: {ex.Message}");
-            }
+            Debug.WriteLine($"An error occurred while navigating to AddOrderViewModel: {ex.Message}");
         }
     }
+    private void GoBack()
+    {
+        try
+        {
+            var mainViewModel = _serviceProvider.GetService<MainViewModel>();
+            mainViewModel.CurrentViewModel = _serviceProvider.GetService<MainOptionsViewModel>();
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"An error occurred while navigating back: {ex.Message}");
+        }
+    }
+
+
 }

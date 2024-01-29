@@ -1,6 +1,7 @@
 ﻿using Business.Interfaces;
 using Business.Services;
 using Infrastructure.Contexts;
+using Infrastructure.Interfaces;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +33,11 @@ namespace Presentation.WPF
                 services.AddScoped<IAuthRepository, AuthRepository>();
                 services.AddScoped<ICategoryRepository, CategoryRepository>();
                 services.AddScoped<IProductRepository, ProductRepository>();
+                services.AddScoped<IOrderRepository, OrderRepository>();
+                services.AddScoped<IOrderService, OrderService>();
+
+
+
 
                 services.AddScoped<IAuthService, AuthService>();
                 services.AddScoped<IProductService, ProductService>();
@@ -57,6 +63,8 @@ namespace Presentation.WPF
                 services.AddTransient<MainOptionsProductView>();
                 services.AddTransient<MainOptionsOrderViewModel>();
                 services.AddTransient<MainOptionsOrderView>();
+                services.AddTransient<AddOrderViewModel>();
+                services.AddTransient<AddOrderView>();
             }).Build();
         }
 

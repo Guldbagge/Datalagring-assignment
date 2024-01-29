@@ -244,3 +244,15 @@
 2024-01-26 14:07:05 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.
 2024-01-26 14:08:33 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
 2024-01-26 14:08:33 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-01-29 11:12:34 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-29 11:12:34 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-01-29 11:22:24 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-29 11:22:24 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-01-29 13:46:03 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-01-29 13:46:03 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=1, UserId=8, Quantity=3
+2024-01-29 13:46:03 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-01-29 13:46:03 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-01-29 13:46:03 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-01-29 13:46:04 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
+2024-01-29 13:46:04 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: True
+2024-01-29 13:46:04 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was placed successfully.

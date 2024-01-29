@@ -49,6 +49,10 @@
                     <views:MainOptionsOrderView />
                 </DataTemplate>
 
+                <DataTemplate DataType="{x:Type viewmodels:AddOrderViewModel}">
+                    <views:AddOrderView />
+                </DataTemplate>
+
             </ContentControl.Resources>
         </ContentControl>
         

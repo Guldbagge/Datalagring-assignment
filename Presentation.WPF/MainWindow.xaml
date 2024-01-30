@@ -53,6 +53,14 @@
                     <views:AddOrderView />
                 </DataTemplate>
 
+                <DataTemplate DataType="{x:Type viewmodels:GetOneProductViewModel}">
+                    <views:GetOneProductView />
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:GetOneOrderViewModel}">
+                    <views:GetOneOrderView />
+                </DataTemplate>
+
             </ContentControl.Resources>
         </ContentControl>
         

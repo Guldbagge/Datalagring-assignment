@@ -8,6 +8,7 @@ namespace Shared.Dtos;
 
 public class OrderDto
 {
+ 
     public string ArticleNumber { get; set; } = null!;
     public int UserId { get; set; }
     public int Quantity { get; set; }

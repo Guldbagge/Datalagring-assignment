@@ -1,25 +1,63 @@
-﻿using Infrastructure.Entities;
+﻿//using Infrastructure.Entities;
+//using Microsoft.EntityFrameworkCore;
+
+//namespace Infrastructure.Contexts;
+
+//public class CustomerContext(DbContextOptions<CustomerContext> options) : DbContext(options)
+//{
+//    public virtual DbSet<UserEntity> Users { get; set; }
+//    public virtual DbSet<RoleEntity> Roles { get; set; }
+//    public virtual DbSet<AuthEntity> Authentications { get; set; }
+//    public virtual DbSet<BankSwishDetailsEntity> BankSwishDetails { get; set; }
+//    public virtual DbSet<ReviewFeedbackEntity> ReviewFeedbacks { get; set; }
+//    public virtual DbSet<UserTypeEntity> UserTypes { get; set; }
+//    public virtual DbSet<OrderEntity> Order { get; set; }
+//    public virtual DbSet<OrderRowEntity> OrderRow { get; set; }
+
+//    protected override void OnModelCreating(ModelBuilder modelBuilder)
+//    {
+//        base.OnModelCreating(modelBuilder);
+
+//        // Uteslut Product och Category från migrationshistoriken
+//        modelBuilder.Ignore<Product>();
+//        modelBuilder.Ignore<Category>();
+//    }
+//}
+
+
+using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Contexts;
-
-public class CustomerContext(DbContextOptions<CustomerContext> options) : DbContext(options)
+namespace Infrastructure.Contexts
 {
-    public virtual DbSet<UserEntity> Users { get; set; }
-    public virtual DbSet<RoleEntity> Roles { get; set; }
-    public virtual DbSet<AuthEntity> Authentications { get; set; }
-    public virtual DbSet<BankSwishDetailsEntity> BankSwishDetails { get; set; }
-    public virtual DbSet<ReviewFeedbackEntity> ReviewFeedbacks { get; set; }
-    public virtual DbSet<UserTypeEntity> UserTypes { get; set; }
-    public virtual DbSet<OrderEntity> Order { get; set; }
-    public virtual DbSet<OrderRowEntity> OrderRow { get; set; }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public class CustomerContext : DbContext
     {
-        base.OnModelCreating(modelBuilder);
+        public CustomerContext(DbContextOptions<CustomerContext> options) : base(options)
+        {
+        }
 
-        // Uteslut Product och Category från migrationshistoriken
-        modelBuilder.Ignore<Product>();
-        modelBuilder.Ignore<Category>();
+        public virtual DbSet<UserEntity> Users { get; set; }
+        public virtual DbSet<RoleEntity> Roles { get; set; }
+        public virtual DbSet<AuthEntity> Authentications { get; set; }
+        public virtual DbSet<BankSwishDetailsEntity> BankSwishDetails { get; set; }
+        public virtual DbSet<ReviewFeedbackEntity> ReviewFeedbacks { get; set; }
+        public virtual DbSet<UserTypeEntity> UserTypes { get; set; }
+        public virtual DbSet<OrderEntity> Order { get; set; }
+        public virtual DbSet<OrderRowEntity> OrderRow { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies(); // Aktivera lazy loading
+            base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Uteslut Product och Category från migrationshistoriken
+            modelBuilder.Ignore<Product>();
+            modelBuilder.Ignore<Category>();
+        }
     }
 }

@@ -4,6 +4,8 @@ using Infrastructure.Interfaces;
 using Shared.Dtos;
 using Shared.Utils;
 
+namespace Business.Interfaces;
+
 public class OrderService : IOrderService
 {
     private readonly IOrderRepository _orderRepository;
@@ -99,4 +101,21 @@ public class OrderService : IOrderService
             return false;
         }
     }
+
+    public async Task<OrderEntity> GetOrderAsync(GetOneOrderDto getOneOrderDto)
+    {
+        try
+        {
+            // Implement the logic to retrieve the order using the DTO.
+            var orderEntity = await _orderRepository.GetAsync(x => x.OrderId == getOneOrderDto.OrderId);
+
+            return orderEntity;
+        }
+        catch (Exception ex)
+        {
+            Logger.Log(ex.Message, "OrderService.GetOrderAsync(GetOneOrderDto)", LogTypes.Error);
+            return null;
+        }
+    }
+
 }

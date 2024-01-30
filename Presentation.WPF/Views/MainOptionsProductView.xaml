@@ -23,7 +23,9 @@
             <Button Content="Update Diver" Command="{Binding NavigateToUpdateUserCommand}" Width="200" Height="40" Margin="0,10" Background="#03A9F4" Foreground="White" BorderThickness="0"/>
             <Button Content="Get All Divers" Command="{Binding NavigateToGetAllUserCommand}" Width="200" Height="40" Margin="0,10" Background="#FF9800" Foreground="White" BorderThickness="0"/>
             <Button Content="Get Diver Details" Command="{Binding NavigateToGetUserDetailsCommand}" Width="200" Height="40" Margin="0,10" Background="#4CAF50" Foreground="White" BorderThickness="0"/>-->
+            
             <Button Content="Add Product" Command="{Binding NavigateToAddProductCommand}" Width="200" Height="40" Margin="0,10" Background="#4CAF50" Foreground="White" BorderThickness="0"/>
+            <Button Content="Get One Product" Command="{Binding NavigateToGetOneProductCommand}" Width="200" Height="40" Margin="0,10" Background="#4CAF50" Foreground="White" BorderThickness="0"/>
         </StackPanel>
     </Grid>
 </UserControl>

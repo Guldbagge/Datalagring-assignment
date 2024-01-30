@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Presentation.WPF.Views.GetOneProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Presentation.WPF.Views"
+             
+              xmlns:viewmodels="clr-namespace:Presentation.WPF.ViewModels"
+             xmlns:models="clr-namespace:Presentation.WPF.Models"
+             d:DataContext="{d:DesignInstance Type={x:Type viewmodels:GetOneProductViewModel}}"
+             
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="380">
+    <Grid Background="#007EA7">
+        <StackPanel Margin="0,30,0,30">
+            <Button Command="{Binding GoBackCommand}" Content="Go Back to Main Menu" Width="200" Height="40" Margin="0,10" Background="#009688" Foreground="White" BorderThickness="0"/>
+            <Label Content="Article Number" Foreground="White" />
+            <TextBox Text="{Binding ArticleNumber, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+
+            <Button Command="{Binding GetProductCommand}" Content="Get Product" Width="200" Height="40" Margin="0,10" Background="#009688" Foreground="White" BorderThickness="0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

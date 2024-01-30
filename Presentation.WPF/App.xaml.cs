@@ -65,6 +65,10 @@ namespace Presentation.WPF
                 services.AddTransient<MainOptionsOrderView>();
                 services.AddTransient<AddOrderViewModel>();
                 services.AddTransient<AddOrderView>();
+                services.AddTransient<GetOneProductViewModel>();
+                services.AddTransient<GetOneProductView>();
+                services.AddTransient<GetOneOrderViewModel>();
+                services.AddTransient<GetOneOrderView>();
             }).Build();
         }
 

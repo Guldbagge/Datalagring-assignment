@@ -41,6 +41,28 @@ namespace Presentation.WPF.ViewModels
             }
         }
 
+        [RelayCommand]
+        private void NavigateToGetOneProduct()
+        {
+            try
+            {
+                var mainViewModel = _serviceProvider.GetService<MainViewModel>();
+
+                if (mainViewModel != null)
+                {
+                    mainViewModel.CurrentViewModel = _serviceProvider.GetService<GetOneProductViewModel>();
+                }
+                else
+                {
+                    Debug.WriteLine("MainViewModel is null. Unable to set CurrentViewModel.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"An error occurred while navigating to GetAllProductViewModel: {ex.Message}");
+            }
+        }
+
         private void GoBack()
         {
             try

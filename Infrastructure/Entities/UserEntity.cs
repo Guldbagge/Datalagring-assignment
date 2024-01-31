@@ -12,7 +12,6 @@ public class UserEntity
     public bool AcceptsUserTerms { get; set; }
     public bool AcceptsMarketingTerms { get; set; }
     public int RoleId { get; set; }
-
     public virtual RoleEntity Role { get; set; } = null!;
     public virtual AuthEntity Authentication { get; set; } = null!;
 }

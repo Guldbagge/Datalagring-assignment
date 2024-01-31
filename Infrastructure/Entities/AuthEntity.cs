@@ -11,6 +11,5 @@ public class AuthEntity
     public string? AccessToken { get; set; }
     public DateTime LastSignedIn { get; set; } = DateTime.Now;
     public bool IsPresistent { get; set; }
-
     public virtual UserEntity User { get; set; } = null!;
 }

@@ -342,3 +342,72 @@
 2024-01-30 16:00:05 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
 2024-01-30 16:00:05 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: True
 2024-01-30 16:00:05 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was placed successfully.
+2024-01-31 08:32:01 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-31 08:32:01 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-01-31 08:43:19 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-01-31 08:43:19 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-01-31 08:50:33 :: AuthService.RemoveUserAsync() :: Info :: User with email magnus@domain.com was successfully removed.
+2024-01-31 08:50:33 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email magnus@domain.com was successfully removed.
+2024-01-31 08:51:23 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-31 08:51:23 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=Dator, Description=bra, Price=100, CategoryName=Elektronik
+2024-01-31 08:51:23 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-31 08:51:24 :: ProductService.AddProductAsync() :: Info :: Product with ArticleNumber 1 already exists.
+2024-01-31 08:51:24 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: False
+2024-01-31 08:51:24 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-01-31 08:51:58 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-31 08:51:58 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=14, Title=Dator, Description=Bra, Price=10000, CategoryName=Elektronik
+2024-01-31 08:51:58 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-31 08:51:58 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-31 08:51:58 :: ProductService.GetOrCreateCategoryAsync() :: Info :: Category 'Elektronik' created.
+2024-01-31 08:51:58 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 4
+2024-01-31 08:51:58 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Infrastructure.Repositories.ProductRepository
+2024-01-31 08:51:58 :: _productRepository :: Info :: Before SaveChangesAsync - ArticleNumber=14, Title=Dator, Description=Bra, Price=10000, CategoryId=4
+2024-01-31 08:51:58 :: _productRepository :: Info :: After SaveChangesAsync - ArticleNumber=14, Title=Dator, Description=Bra, Price=10000, CategoryId=4
+2024-01-31 08:51:58 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-01-31 08:51:58 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: True
+2024-01-31 08:51:58 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.
+2024-01-31 08:52:10 :: GetOneProductViewModel.GetProductAsync() :: Info :: Product with article number 14 was retrieved successfully.
+2024-01-31 08:52:37 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-01-31 08:52:37 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=14, UserId=4, Quantity=5
+2024-01-31 08:52:37 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-01-31 08:52:37 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-01-31 08:52:37 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-01-31 08:52:37 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
+2024-01-31 08:52:37 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: True
+2024-01-31 08:52:37 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was placed successfully.
+2024-01-31 08:52:54 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 14 was not found.
+2024-01-31 08:54:21 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 7 was retrieved successfully.
+2024-01-31 10:56:48 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-01-31 10:56:48 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-01-31 10:57:36 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-01-31 10:57:36 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-01-31 10:59:05 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 16
+2024-01-31 10:59:06 :: Repo.UpdateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-01-31 10:59:06 :: AuthService.UpdateUserAsync() :: Error :: Failed to update user with email .
+2024-01-31 10:59:06 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-01-31 10:59:37 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 16
+2024-01-31 10:59:37 :: AuthService.UpdateUserAsync() :: Info :: User with email magnus@domain.com was successfully updated.
+2024-01-31 10:59:37 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-01-31 11:00:02 :: AuthService.RemoveUserAsync() :: Info :: User with email magnus@domain.com was successfully removed.
+2024-01-31 11:00:02 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email magnus@domain.com was successfully removed.
+2024-01-31 11:00:37 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-01-31 11:00:37 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=15, Title=Iphon, Description=bra att ha, Price=10000, CategoryName=Elektronik
+2024-01-31 11:00:37 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-01-31 11:00:37 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-01-31 11:00:37 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 4
+2024-01-31 11:00:37 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Infrastructure.Repositories.ProductRepository
+2024-01-31 11:00:37 :: _productRepository :: Info :: Before SaveChangesAsync - ArticleNumber=15, Title=Iphon, Description=bra att ha, Price=10000, CategoryId=4
+2024-01-31 11:00:37 :: _productRepository :: Info :: After SaveChangesAsync - ArticleNumber=15, Title=Iphon, Description=bra att ha, Price=10000, CategoryId=4
+2024-01-31 11:00:37 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-01-31 11:00:37 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: True
+2024-01-31 11:00:37 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.
+2024-01-31 11:00:48 :: GetOneProductViewModel.GetProductAsync() :: Info :: Product with article number 15 was retrieved successfully.
+2024-01-31 11:01:17 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-01-31 11:01:18 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=15, UserId=8, Quantity=3
+2024-01-31 11:01:18 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-01-31 11:01:18 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-01-31 11:01:18 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-01-31 11:01:18 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
+2024-01-31 11:01:18 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: True
+2024-01-31 11:01:18 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was placed successfully.
+2024-01-31 11:01:55 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 8 was retrieved successfully.

@@ -1,6 +1,5 @@
-﻿namespace Infrastructure.Interfaces
+﻿namespace Infrastructure.Interfaces;
+
+public interface IBankSwishDetailsRepository
 {
-    public interface IBankSwishDetailsRepository
-    {
-    }
 }

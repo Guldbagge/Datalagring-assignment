@@ -8,11 +8,6 @@ namespace Shared.Dtos;
 
 public class GetOneOrderDto
 {
-    //public String ArticleNumber { get; set; } = null!;
-    //public string Username { get; set; } = null!;
-    //public String Title { get; set; } = null!;
-    //public int Price { get; set; }
-    //public int Quantity { get; set; }
 
     public int OrderId { get; set; }
     public int UserId { get; set; }

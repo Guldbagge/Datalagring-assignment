@@ -2,8 +2,11 @@
 using Business.Interfaces;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.DependencyInjection;
 using Presentation.WPF.Models;
 using Shared.Utils;
+using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace Presentation.WPF.ViewModels
@@ -11,14 +14,18 @@ namespace Presentation.WPF.ViewModels
     public partial class UpdateUserViewModel : ObservableObject
     {
         private readonly IAuthService _authService;
+        private readonly IServiceProvider _serviceProvider;
+
+        public UpdateUserViewModel(IServiceProvider serviceProvider, IAuthService authService)
+        {
+            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+            _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+
+            GoBackCommand = new RelayCommand(GoBack);
+        }
 
         [ObservableProperty]
         private UpdateUserFormModel _form = new UpdateUserFormModel();
-
-        public UpdateUserViewModel(IAuthService authService)
-        {
-            _authService = authService;
-        }
 
         [RelayCommand]
         private async Task UpdateUser()
@@ -55,5 +62,13 @@ namespace Presentation.WPF.ViewModels
                 Logger.Log(ex.Message, "UpdateUserViewModel.UpdateUser()", LogTypes.Error);
             }
         }
+
+        private void GoBack()
+        {
+            var mainViewModel = _serviceProvider.GetService<MainViewModel>();
+            mainViewModel.CurrentViewModel = _serviceProvider.GetService<MainOptionsViewModel>();
+        }
+
+        public IRelayCommand GoBackCommand { get; }
     }
 }

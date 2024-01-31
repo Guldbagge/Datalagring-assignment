@@ -93,7 +93,7 @@ namespace Infrastructure.Repositories
                 Logger.Log($"Error during product creation: {ex.Message}", source, LogTypes.Error);
             }
 
-            return null;
+            return null!;
         }
     }
 }

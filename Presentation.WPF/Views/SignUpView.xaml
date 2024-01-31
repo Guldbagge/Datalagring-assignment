@@ -14,6 +14,8 @@
     <Grid Background="#007EA7">
         <StackPanel Margin="0,30,0,30">
 
+            <Button Command="{Binding GoBackCommand}" Content="Go Back to Main Menu" Width="200" Height="40" Margin="0,10" Background="#009688" Foreground="White" BorderThickness="0"/>
+
             <Label Content="First Name" Foreground="White" />
             <TextBox Text="{Binding Form.FirstName}" Padding="5" Margin="10,0,10,5" />
 

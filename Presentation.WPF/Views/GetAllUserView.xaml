@@ -11,8 +11,20 @@
              
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="380">
-    <Grid>
-        <ListBox ItemsSource="{Binding Users}" Background="#007EA7">
+    <Grid Background="#007EA7">
+        <!-- Define two rows in the grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Auto-sized row for the button -->
+            <RowDefinition Height="*"/>
+            <!-- Star-sized row for the ListBox (takes remaining space) -->
+        </Grid.RowDefinitions>
+
+        <!-- Button in the first row -->
+        <Button Grid.Row="0" Command="{Binding GoBackCommand}" Content="Go Back to Main Menu" Width="200" Height="40" Margin="0,10" Background="#009688" Foreground="White" BorderThickness="0"/>
+
+        <!-- ListBox in the second row -->
+        <ListBox Grid.Row="1" ItemsSource="{Binding Users}" Background="#007EA7">
             <!-- Define how each user should be displayed -->
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -31,6 +43,7 @@
             </ListBox.ItemContainerStyle>
         </ListBox>
     </Grid>
+
 
 
 </UserControl>

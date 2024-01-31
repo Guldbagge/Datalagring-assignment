@@ -18,6 +18,9 @@ namespace Presentation.WPF.ViewModels
         {
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
             _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+            _articleNumber = string.Empty;
+            _title = string.Empty; 
+            _description = string.Empty;
 
             GetProductCommand = new AsyncRelayCommand(GetProductAsync);
             GoBackCommand = new RelayCommand(GoBack);
@@ -72,7 +75,7 @@ namespace Presentation.WPF.ViewModels
                 if (product != null)
                 {
                     Title = product.Title;
-                    Description = product.Description;
+                    Description = product.Description!;
                     Price = product.Price;
 
                     Logger.Log($"Product with article number {ArticleNumber} was retrieved successfully.", "GetOneProductViewModel.GetProductAsync()", LogTypes.Info);

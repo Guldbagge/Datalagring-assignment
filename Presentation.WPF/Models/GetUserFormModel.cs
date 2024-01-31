@@ -1,41 +1,40 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Presentation.WPF.Models
+namespace Presentation.WPF.Models;
+
+public class GetUserFormModel : ObservableObject
 {
-    public class GetUserFormModel : ObservableObject
+    private string _email = string.Empty;
+    private string _firstName = string.Empty;
+    private string _lastName = string.Empty;
+
+    public string Email
     {
-        private string _email;
-        private string _firstName;
-        private string _lastName;
-
-        public string Email
+        get => _email;
+        set
         {
-            get => _email;
-            set
-            {
-                _email = value;
-                OnPropertyChanged(nameof(Email));
-            }
+            _email = value;
+            OnPropertyChanged(nameof(Email));
         }
+    }
 
-        public string FirstName
+    public string FirstName
+    {
+        get => _firstName;
+        set
         {
-            get => _firstName;
-            set
-            {
-                _firstName = value;
-                OnPropertyChanged(nameof(FirstName));
-            }
+            _firstName = value;
+            OnPropertyChanged(nameof(FirstName));
         }
+    }
 
-        public string LastName
+    public string LastName
+    {
+        get => _lastName;
+        set
         {
-            get => _lastName;
-            set
-            {
-                _lastName = value;
-                OnPropertyChanged(nameof(LastName));
-            }
+            _lastName = value;
+            OnPropertyChanged(nameof(LastName));
         }
     }
 }

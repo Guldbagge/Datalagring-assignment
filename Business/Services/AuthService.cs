@@ -44,7 +44,10 @@ namespace Business.Services
                     }
                 }
             }
-            catch (Exception ex) { Logger.Log(ex.Message, "AuthService.SignUpAsync()", LogTypes.Error); }
+            catch (Exception ex)
+            {
+                Logger.Log(ex.Message, "AuthService.SignUpAsync()", LogTypes.Error);
+            }
             return false;
         }
 
@@ -94,13 +97,13 @@ namespace Business.Services
                 else
                 {
                     Logger.Log($"User with email {getUserDto.Email} was not found.", "AuthService.GetUserByEmailAsync()", LogTypes.Info);
-                    return null;
+                    return null!;
                 }
             }
             catch (Exception ex)
             {
                 Logger.Log(ex.Message, "AuthService.GetUserByEmailAsync()", LogTypes.Error);
-                return null;
+                return null!;
             }
         }
 

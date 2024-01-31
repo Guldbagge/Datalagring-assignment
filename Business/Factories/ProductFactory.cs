@@ -3,6 +3,8 @@ using Shared.Dtos;
 using Shared.Utils;
 using System;
 
+namespace Business.Factories;
+
 public static class ProductFactory
 {
     public static Product Create(AddProductDto addProductDto)

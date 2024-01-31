@@ -1,6 +1,8 @@
-﻿using Business.Interfaces;
+﻿using Business.Factories;
+using Business.Interfaces;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.DependencyInjection;
 using Presentation.WPF.Models;
 using Shared.Dtos;
 using Shared.Utils;
@@ -17,13 +19,17 @@ public partial class AddOrderViewModel : ObservableObject
 {
 
     private readonly IOrderService _orderService;
+    private readonly IServiceProvider _serviceProvider;
 
     [ObservableProperty]
     private OrderModel _form = new();
 
-    public AddOrderViewModel(IOrderService orderService)
+    public AddOrderViewModel(IOrderService orderService, IServiceProvider serviceProvider)
     {
         _orderService = orderService ?? throw new ArgumentNullException(nameof(orderService));
+        
+        _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+        GoBackCommand = new RelayCommand(GoBack);
     }
 
     [RelayCommand]
@@ -63,5 +69,12 @@ public partial class AddOrderViewModel : ObservableObject
     private void LogOrderDtoInfo(OrderDto orderDto)
     {
         Logger.Log($"OrderDto Information: ArticleNumber={orderDto.ArticleNumber}, UserId={orderDto.UserId}, Quantity={orderDto.Quantity}", "PlaceOrderViewModel.PlaceOrder()", LogTypes.Info);
+    }
+
+    public IRelayCommand GoBackCommand { get; }
+    private void GoBack()
+    {
+        var mainViewModel = _serviceProvider.GetService<MainViewModel>();
+        mainViewModel.CurrentViewModel = _serviceProvider.GetService<MainOptionsViewModel>();
     }
 }

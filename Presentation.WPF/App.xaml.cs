@@ -35,10 +35,6 @@ namespace Presentation.WPF
                 services.AddScoped<IProductRepository, ProductRepository>();
                 services.AddScoped<IOrderRepository, OrderRepository>();
                 services.AddScoped<IOrderService, OrderService>();
-
-
-
-
                 services.AddScoped<IAuthService, AuthService>();
                 services.AddScoped<IProductService, ProductService>();
 

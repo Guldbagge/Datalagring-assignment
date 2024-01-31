@@ -5,9 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Repositories
+namespace Infrastructure.Repositories;
+
+public class UserTypeRepository(CustomerContext context) : Repo<UserTypeEntity, CustomerContext>(context), IUserTypeRepository
 {
-    public class UserTypeRepository(CustomerContext context) : Repo<UserTypeEntity, CustomerContext>(context), IUserTypeRepository
-    {
-    }
 }

@@ -2,6 +2,8 @@
 using Shared.Utils;
 using System;
 
+namespace Business.Factories;
+
 public static class CategoryFactory
 {
     public static Category Create()

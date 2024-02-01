@@ -17,10 +17,10 @@
             <Label Content="Order ID" Foreground="White" />
             <TextBox Text="{Binding OrderId, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
 
-            <Button Command="{Binding GetOrderCommand}" Content="Get Order" Width="200" Height="40" Margin="0,10" Background="#009688" Foreground="White" BorderThickness="0"/>
+            <Button Command="{Binding GetOrderCommand}" Content="Get Order" Width="200" Height="40" Margin="0,10" Background="#4CAF50" Foreground="White" BorderThickness="0"/>
 
             <ListBox ItemsSource="{Binding OrderRows}" Background="#007EA7">
-                <!-- Define how each order row should be displayed -->
+              
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
@@ -36,7 +36,6 @@
                             <TextBlock FontWeight="Bold" Text="User ID:" Foreground="White" />
                             <TextBlock Text="{Binding UserId}" Foreground="White" />
 
-                            <!-- Add more TextBlocks for additional properties as needed -->
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

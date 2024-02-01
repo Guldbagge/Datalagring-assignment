@@ -19,9 +19,9 @@
 
             <TextBlock Text="{Binding FirstName}" Foreground="White" />
             <TextBlock Text="{Binding LastName}" Foreground="White" />
-  
 
-            <Button Command="{Binding GetUserCommand}" Content="Get User" Width="200" Height="40" Margin="0,10" Background="#009688" Foreground="White" BorderThickness="0"/>
+
+            <Button Command="{Binding GetUserCommand}" Content="Get Diver" Width="200" Height="40" Margin="0,10" Background="#4CAF50" Foreground="White" BorderThickness="0"/>
 
         </StackPanel>
     </Grid>

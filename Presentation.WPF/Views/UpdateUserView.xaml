@@ -32,7 +32,7 @@
             <Label Content="Confirm Password" Foreground="White" />
             <TextBox Text="{Binding Form.ConfirmPassword, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
 
-            <Button Command="{Binding UpdateUserCommand}" Content="Update User" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,20,10,0" />
+            <Button Command="{Binding UpdateUserCommand}" Content="Update Diver" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,20,10,0" />
         </StackPanel>
     </Grid>
 </UserControl>

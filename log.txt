@@ -469,3 +469,5 @@
 2024-02-01 10:47:11 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Mock<IOrderRepository:4>.Object
 2024-02-01 10:47:11 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
 2024-02-01 10:47:12 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: After SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
+2024-02-01 11:37:40 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 2 was retrieved successfully.
+2024-02-01 11:37:46 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 1 was retrieved successfully.

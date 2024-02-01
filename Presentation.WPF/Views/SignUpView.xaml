@@ -34,7 +34,7 @@
             <CheckBox IsChecked="{Binding Form.AcceptsUserTerms}" Content="I accept the terms and conditions for this application." Foreground="White" Margin="10,0,10,20" />
             <CheckBox IsChecked="{Binding Form.AcceptsMarketingTerms}" Content="I want to receive newsletters and marketing campaigns." Foreground="White" Margin="10,0,10,20" />
 
-            <Button Command="{Binding SignUpCommand}" Content="Sign Up" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,0,10,20" />
+            <Button Command="{Binding SignUpCommand}" Content="Sign Up Diver" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,0,10,20" />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -13,5 +13,5 @@ public interface IAuthService
     Task<bool> RemoveUserAsync(string email);
     Task<List<UserEntity>> GetAllUsersAsync();
     Task<bool> UpdateUserAsync(UpdateUserDto updateUserDto);
-   
+    Task<bool> CheckIfUserExistsAsync(string email);
 }

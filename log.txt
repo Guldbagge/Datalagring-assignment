@@ -471,3 +471,59 @@
 2024-02-01 10:47:12 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: After SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
 2024-02-01 11:37:40 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 2 was retrieved successfully.
 2024-02-01 11:37:46 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 1 was retrieved successfully.
+2024-02-01 12:11:04 :: GetOneProductViewModel.GetProductAsync() :: Info :: Product with article number 1 was retrieved successfully.
+2024-02-01 12:11:27 :: AuthService.GetUserByEmailAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
+2024-02-01 12:11:27 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
+2024-02-02 13:59:58 :: AuthService.GetUserByEmailAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
+2024-02-02 13:59:58 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email zelda@domain.com was retrieved successfully.
+2024-02-02 14:00:43 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-02-02 14:00:43 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=, Description=, Price=0, CategoryName=
+2024-02-02 14:00:43 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-02-02 14:00:43 :: ProductService.AddProductAsync() :: Info :: Product with ArticleNumber 1 already exists.
+2024-02-02 14:00:43 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: False
+2024-02-02 14:00:43 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-02-02 14:03:14 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-02-02 14:03:14 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=jh, Description=jh, Price=10, CategoryName=jlk
+2024-02-02 14:03:14 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-02-02 14:03:15 :: ProductService.AddProductAsync() :: Info :: Product with ArticleNumber 1 already exists.
+2024-02-02 14:03:15 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: False
+2024-02-02 14:03:15 :: AddProductViewModel.AddProduct() :: Info :: Product was not created successfully.
+2024-02-02 14:09:18 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-02-02 14:09:18 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=1, Title=d, Description=hk, Price=870, CategoryName=hkj
+2024-02-02 14:09:18 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-02-02 14:09:19 :: ProductService.AddProductAsync() :: Info :: Product with ArticleNumber 1 already exists.
+2024-02-02 14:09:19 :: AddProductViewModel.AddProduct() :: Info :: Product with ArticleNumber 1 already exists.
+2024-02-02 14:10:48 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-02-02 14:10:48 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=5, Title=Melon, Description=Stora, Price=20, CategoryName=Frukt
+2024-02-02 14:10:48 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-02-02 14:10:48 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-02-02 14:10:48 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 3
+2024-02-02 14:10:48 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Infrastructure.Repositories.ProductRepository
+2024-02-02 14:10:48 :: _productRepository :: Info :: Before SaveChangesAsync - ArticleNumber=5, Title=Melon, Description=Stora, Price=20, CategoryId=3
+2024-02-02 14:10:48 :: _productRepository :: Info :: After SaveChangesAsync - ArticleNumber=5, Title=Melon, Description=Stora, Price=20, CategoryId=3
+2024-02-02 14:10:48 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-02-02 14:10:48 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: True
+2024-02-02 14:10:48 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.
+2024-02-02 14:12:52 :: AuthService.SignUpAsync() :: Info :: User with zelda@domain.com already exists.
+2024-02-02 14:12:52 :: SignUpViewModel.SignUp() :: Info :: User was not created successfully.
+2024-02-02 14:16:38 :: SignUpViewModel.SignUp() :: Info :: Before calling SignUpAsync
+2024-02-02 14:16:39 :: AuthService.SignUpAsync() :: Info :: User with zelda@domain.com already exists.
+2024-02-02 14:16:39 :: SignUpViewModel.SignUp() :: Info :: User with email zelda@domain.com already exists.
+2024-02-02 14:17:13 :: SignUpViewModel.SignUp() :: Info :: Before calling SignUpAsync
+2024-02-02 14:17:13 :: AuthService.SignUpAsync() :: Info :: User with alessandro@domain.com already exists.
+2024-02-02 14:17:13 :: SignUpViewModel.SignUp() :: Info :: User with email alessandro@domain.com already exists.
+2024-02-02 14:17:52 :: SignUpViewModel.SignUp() :: Info :: Before calling SignUpAsync
+2024-02-02 14:17:52 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-02-02 14:17:52 :: SignUpViewModel.SignUp() :: Info :: After calling SignUpAsync, result: True
+2024-02-02 14:17:52 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-02-02 14:18:11 :: AuthService.RemoveUserAsync() :: Info :: User with email asf@domain was successfully removed.
+2024-02-02 14:18:11 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email asf@domain was successfully removed.
+2024-02-02 14:20:31 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: Before SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
+2024-02-02 14:20:31 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-02-02 14:20:31 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 1
+2024-02-02 14:20:31 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-02 14:20:31 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Mock<IProductRepository:2>.Object
+2024-02-02 14:20:31 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-02-02 14:20:31 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
+2024-02-02 14:20:31 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: After SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
+2024-02-02 14:20:31 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.

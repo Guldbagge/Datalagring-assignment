@@ -42,19 +42,29 @@ namespace Presentation.WPF.ViewModels
 
                 Logger.Log("Before calling AddProductAsync", "AddProductViewModel.AddProduct()", LogTypes.Info);
 
-                var result = await _productService.AddProductAsync(addProductDto);
+                var productExists = await _productService.CheckIfProductExistsAsync(addProductDto.ArticleNumber);
 
-                Logger.Log($"After calling AddProductAsync, result: {result}", "AddProductViewModel.AddProduct()", LogTypes.Info);
-
-                if (result)
+                if (productExists)
                 {
-                    Logger.Log("Product was created successfully.", "AddProductViewModel.AddProduct()", LogTypes.Info);
-                    MessageBox.Show("Product was created successfully.");
+                    Logger.Log($"Product with ArticleNumber {addProductDto.ArticleNumber} already exists.", "AddProductViewModel.AddProduct()", LogTypes.Info);
+                    MessageBox.Show($"Product with ArticleNumber {addProductDto.ArticleNumber} already exists.");
                 }
                 else
                 {
-                    Logger.Log("Product was not created successfully.", "AddProductViewModel.AddProduct()", LogTypes.Info);
-                    MessageBox.Show("Something went wrong.");
+                    var result = await _productService.AddProductAsync(addProductDto);
+
+                    Logger.Log($"After calling AddProductAsync, result: {result}", "AddProductViewModel.AddProduct()", LogTypes.Info);
+
+                    if (result)
+                    {
+                        Logger.Log("Product was created successfully.", "AddProductViewModel.AddProduct()", LogTypes.Info);
+                        MessageBox.Show("Product was created successfully.");
+                    }
+                    else
+                    {
+                        Logger.Log("Product was not created successfully.", "AddProductViewModel.AddProduct()", LogTypes.Info);
+                        MessageBox.Show("Something went wrong.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -62,6 +72,7 @@ namespace Presentation.WPF.ViewModels
                 Logger.Log(ex.Message, "AddProductViewModel.AddProduct()", LogTypes.Error);
             }
         }
+
 
         private void LogAddProductDtoInfo(AddProductDto addProductDto)
         {

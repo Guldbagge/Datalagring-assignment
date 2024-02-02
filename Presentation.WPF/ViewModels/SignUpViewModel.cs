@@ -35,17 +35,31 @@ namespace Presentation.WPF.ViewModels
                 var signUpDto = SignUpDtoFactory.Create(Form.FirstName, Form.LastName, Form.Email, Form.Password, Form.AcceptsUserTerms, Form.AcceptsMarketingTerms);
                 Form = new();
 
-                var result = await _authService.SignUpAsync(signUpDto);
+                Logger.Log("Before calling SignUpAsync", "SignUpViewModel.SignUp()", LogTypes.Info);
 
-                if (result)
+                var userExists = await _authService.CheckIfUserExistsAsync(signUpDto.Email);
+
+                if (userExists)
                 {
-                    Logger.Log("User was created successfully.", "SignUpViewModel.SignUp()", LogTypes.Info);
-                    MessageBox.Show("User was created successfully.");
+                    Logger.Log($"User with email {signUpDto.Email} already exists.", "SignUpViewModel.SignUp()", LogTypes.Info);
+                    MessageBox.Show($"User with email {signUpDto.Email} already exists.");
                 }
                 else
                 {
-                    Logger.Log("User was not created successfully.", "SignUpViewModel.SignUp()", LogTypes.Info);
-                    MessageBox.Show("Something went wrong.");
+                    var result = await _authService.SignUpAsync(signUpDto);
+
+                    Logger.Log($"After calling SignUpAsync, result: {result}", "SignUpViewModel.SignUp()", LogTypes.Info);
+
+                    if (result)
+                    {
+                        Logger.Log("User was created successfully.", "SignUpViewModel.SignUp()", LogTypes.Info);
+                        MessageBox.Show("User was created successfully.");
+                    }
+                    else
+                    {
+                        Logger.Log("User was not created successfully.", "SignUpViewModel.SignUp()", LogTypes.Info);
+                        MessageBox.Show("Something went wrong.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -53,6 +67,7 @@ namespace Presentation.WPF.ViewModels
                 Logger.Log(ex.Message, "SignUpViewModel.SignUp()", LogTypes.Error);
             }
         }
+
 
         private void GoBack()
         {

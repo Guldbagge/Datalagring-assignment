@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.DependencyInjection;
 using Presentation.WPF.Models;
+using Shared.Dtos;
 using Shared.Utils;
 using System;
 using System.Threading.Tasks;
@@ -22,10 +23,165 @@ namespace Presentation.WPF.ViewModels
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
 
             GoBackCommand = new RelayCommand(GoBack);
+            GetUserCommand = new AsyncRelayCommand(GetUserAsync);
         }
 
         [ObservableProperty]
         private UpdateUserFormModel _form = new UpdateUserFormModel();
+
+        private string _email;
+        private string _firstName;
+        private string _lastName;
+        private int _userId;
+
+        public int UserId
+        {
+            get => _userId;
+            set
+            {
+                _userId = value;
+                OnPropertyChanged(nameof(UserId));
+                Form.Id = value;
+            }
+        }
+
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                _email = value;
+                OnPropertyChanged(nameof(Email));
+                OnPropertyChanged(nameof(CombinedEmail));
+            }
+        }
+
+        public string FirstName
+        {
+            get => _firstName;
+            set
+            {
+                _firstName = value;
+                OnPropertyChanged(nameof(FirstName));
+                OnPropertyChanged(nameof(CombinedFirstName));
+            }
+        }
+
+        public string LastName
+        {
+            get => _lastName;
+            set
+            {
+                _lastName = value;
+                OnPropertyChanged(nameof(LastName));
+                OnPropertyChanged(nameof(CombinedLastName));
+            }
+        }
+
+        public string CombinedFirstName => $"{FirstName} {Form.FirstName}";
+
+        public string CombinedLastName => $"{LastName} {Form.LastName}";
+
+        public string CombinedEmail => $"{Email} {Form.Email}";
+
+        public string CombinedPassword => $"{Form.Password}";
+
+        public string CombinedConfirmPassword => $"{Form.ConfirmPassword}";
+
+        private string _editableEmail;
+
+        public string EditableEmail
+        {
+            get => _editableEmail;
+            set
+            {
+                _editableEmail = value;
+                OnPropertyChanged(nameof(EditableEmail));
+            }
+        }
+
+        private string _editableFirstName;
+        private string _editableLastName;
+        private string _editablePassword;
+        private string _editableConfirmPassword;
+
+        public string EditableFirstName
+        {
+            get => _editableFirstName;
+            set
+            {
+                _editableFirstName = value;
+                OnPropertyChanged(nameof(EditableFirstName));
+            }
+        }
+
+        public string EditableLastName
+        {
+            get => _editableLastName;
+            set
+            {
+                _editableLastName = value;
+                OnPropertyChanged(nameof(EditableLastName));
+            }
+        }
+
+        public string EditablePassword
+        {
+            get => _editablePassword;
+            set
+            {
+                _editablePassword = value;
+                OnPropertyChanged(nameof(EditablePassword));
+            }
+        }
+
+        public string EditableConfirmPassword
+        {
+            get => _editableConfirmPassword;
+            set
+            {
+                _editableConfirmPassword = value;
+                OnPropertyChanged(nameof(EditableConfirmPassword));
+            }
+        }
+
+        private async Task GetUserAsync()
+        {
+            try
+            {
+                if (UserId > 0)
+                {
+                    var user = await _authService.GetUserByIdAsync(UserId);
+
+                    if (user != null)
+                    {
+                        FirstName = user.FirstName;
+                        LastName = user.LastName;
+                        Email = user.Email;
+                        EditableFirstName = user.FirstName;
+                        EditableLastName = user.LastName;
+                        EditableEmail = user.Email;
+
+                        Logger.Log($"User with ID {UserId} was retrieved successfully.", "UpdateUserViewModel.GetUserAsync()", LogTypes.Info);
+                        MessageBox.Show($"User with ID {UserId} was retrieved successfully.\nName: {FirstName} {LastName} {Email}");
+                    }
+                    else
+                    {
+                        Logger.Log($"User with ID {UserId} was not found.", "UpdateUserViewModel.GetUserAsync()", LogTypes.Info);
+                        MessageBox.Show($"User with ID {UserId} was not found.");
+                    }
+                }
+                else
+                {
+                    Logger.Log("User ID is invalid.", "UpdateUserViewModel.GetUserAsync()", LogTypes.Warning);
+                    MessageBox.Show("Please provide a valid user ID.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex.Message, "UpdateUserViewModel.GetUserAsync()", LogTypes.Error);
+            }
+        }
 
         [RelayCommand]
         private async Task UpdateUser()
@@ -36,7 +192,7 @@ namespace Presentation.WPF.ViewModels
                 {
                     Logger.Log($"User ID to update: {userId}", "UpdateUserViewModel.UpdateUser()", LogTypes.Info);
 
-                    var updateUserDto = UpdateUserDtoFactory.Create(userId, Form.FirstName, Form.LastName, Form.Email, Form.Password);
+                    var updateUserDto = UpdateUserDtoFactory.Create(userId, EditableFirstName, EditableLastName, EditableEmail, EditablePassword);
                     Form = new UpdateUserFormModel();
 
                     var result = await _authService.UpdateUserAsync(updateUserDto);
@@ -70,5 +226,6 @@ namespace Presentation.WPF.ViewModels
         }
 
         public IRelayCommand GoBackCommand { get; }
+        public AsyncRelayCommand GetUserCommand { get; }
     }
 }

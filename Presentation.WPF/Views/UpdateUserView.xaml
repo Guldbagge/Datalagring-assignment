@@ -11,28 +11,30 @@
              d:DesignHeight="650" d:DesignWidth="380">
     <Grid Background="#007EA7">
         <StackPanel Margin="20">
-
             <Button Command="{Binding GoBackCommand}" Content="Go Back to Main Menu" Width="200" Height="40" Margin="0,10" Background="#009688" Foreground="White" BorderThickness="0"/>
 
             <Label Content="User ID" Foreground="White" />
-            <TextBox Text="{Binding Form.Id}" Padding="5" Margin="10,0,10,5" />
+            <TextBox Text="{Binding UserId, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+
+            <Button Command="{Binding GetUserCommand}" Content="Get User" Padding="8" Background="#2196F3" Foreground="White" Margin="10,20,10,0" />
 
             <Label Content="First Name" Foreground="White" />
-            <TextBox Text="{Binding Form.FirstName, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+            <TextBox Text="{Binding EditableFirstName, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
 
             <Label Content="Last Name" Foreground="White" />
-            <TextBox Text="{Binding Form.LastName, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+            <TextBox Text="{Binding EditableLastName, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
 
             <Label Content="Email" Foreground="White" />
-            <TextBox Text="{Binding Form.Email, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+            <TextBox Text="{Binding EditableEmail, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
 
             <Label Content="Password" Foreground="White" />
-            <TextBox Text="{Binding Form.Password, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+            <TextBox Text="{Binding EditablePassword, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
 
             <Label Content="Confirm Password" Foreground="White" />
-            <TextBox Text="{Binding Form.ConfirmPassword, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
+            <TextBox Text="{Binding EditableConfirmPassword, UpdateSourceTrigger=PropertyChanged}" Padding="5" Margin="10,0,10,5" />
 
-            <Button Command="{Binding UpdateUserCommand}" Content="Update Diver" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,20,10,0" />
+            <Button Command="{Binding UpdateUserCommand}" CommandParameter="{Binding UserId}" Content="Update Diver" Padding="8" Background="#4CAF50" Foreground="White" Margin="10,20,10,0" />
+
         </StackPanel>
     </Grid>
 </UserControl>

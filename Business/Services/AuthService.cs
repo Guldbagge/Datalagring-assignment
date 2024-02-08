@@ -107,6 +107,30 @@ namespace Business.Services
             }
         }
 
+        public async Task<UserEntity> GetUserByIdAsync(int userId)
+        {
+            try
+            {
+                var user = await _userRepository.GetAsync(x => x.Id == userId);
+
+                if (user != null)
+                {
+                    Logger.Log($"User with ID {userId} was retrieved successfully.", "AuthService.GetUserByIdAsync()", LogTypes.Info);
+                    return user;
+                }
+                else
+                {
+                    Logger.Log($"User with ID {userId} was not found.", "AuthService.GetUserByIdAsync()", LogTypes.Info);
+                    return null!;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex.Message, "AuthService.GetUserByIdAsync()", LogTypes.Error);
+                return null!;
+            }
+        }
+
         public async Task<List<UserEntity>> GetAllUsersAsync()
         {
             try

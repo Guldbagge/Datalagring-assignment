@@ -527,3 +527,220 @@
 2024-02-02 14:20:31 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
 2024-02-02 14:20:31 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: After SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
 2024-02-02 14:20:31 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-02-07 10:44:50 :: GetOneProductViewModel.GetProductAsync() :: Info :: Product with article number 2 was retrieved successfully.
+2024-02-07 10:46:24 :: AuthService.RemoveUserAsync() :: Info :: User with email tommy@domain.com was successfully removed.
+2024-02-07 10:46:24 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email tommy@domain.com was successfully removed.
+2024-02-07 10:46:35 :: AuthService.RemoveUserAsync() :: Info :: User with email joakim@domain.com was successfully removed.
+2024-02-07 10:46:35 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email joakim@domain.com was successfully removed.
+2024-02-07 10:47:07 :: AuthService.RemoveUserAsync() :: Info :: User with email zelda@domain was successfully removed.
+2024-02-07 10:47:07 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email zelda@domain was successfully removed.
+2024-02-07 10:47:39 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: Before SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
+2024-02-07 10:47:39 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-02-07 10:47:39 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-07 10:47:39 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 1
+2024-02-07 10:47:39 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Mock<IProductRepository:2>.Object
+2024-02-07 10:47:39 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
+2024-02-07 10:47:39 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: After SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
+2024-02-07 10:47:40 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-02-08 09:46:47 :: GetOneUserViewModel.GetUserAsync() :: Warning :: Email is empty.
+2024-02-08 09:55:16 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 09:55:16 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 09:55:45 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 09:55:45 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 09:59:58 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 09:59:58 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:00:30 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 10:00:30 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 10:00:30 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:01:40 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 10:01:40 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 10:01:40 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:02:10 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 10:02:10 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 10:02:10 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:02:48 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:02:48 :: AuthService.UpdateUserAsync() :: Info :: User with email gfj was successfully updated.
+2024-02-08 10:02:48 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 10:04:23 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:04:23 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:04:41 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:04:41 :: Repo.UpdateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 10:04:41 :: AuthService.UpdateUserAsync() :: Error :: Failed to update user with email cx.
+2024-02-08 10:04:41 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:05:15 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 10:05:15 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 10:05:15 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:05:33 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:05:33 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:05:51 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:05:51 :: AuthService.UpdateUserAsync() :: Info :: User with email cxb was successfully updated.
+2024-02-08 10:05:51 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 10:12:52 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:12:52 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:13:29 :: UpdateUserViewModel.GetUserAsync() :: Warning :: User ID is invalid.
+2024-02-08 10:13:39 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:13:39 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:15:03 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:15:03 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:15:47 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:15:47 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:19:16 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:19:16 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:19:33 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:19:34 :: Repo.UpdateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 10:19:34 :: AuthService.UpdateUserAsync() :: Error :: Failed to update user with email g.
+2024-02-08 10:19:34 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:19:58 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:19:58 :: Repo.UpdateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 10:19:58 :: AuthService.UpdateUserAsync() :: Error :: Failed to update user with email dsg.
+2024-02-08 10:19:58 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:20:15 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:20:15 :: AuthService.UpdateUserAsync() :: Info :: User with email fhd was successfully updated.
+2024-02-08 10:20:15 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 10:27:44 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:27:44 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:27:56 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:27:56 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:28:23 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:28:23 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:29:24 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:29:24 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:31:59 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:31:59 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:32:11 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:32:11 :: AuthService.UpdateUserAsync() :: Info :: User with email dsg was successfully updated.
+2024-02-08 10:32:11 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 10:33:35 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:33:35 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:34:57 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:34:57 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:35:01 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:35:01 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:41:03 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:41:03 :: Repo.UpdateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 10:41:03 :: AuthService.UpdateUserAsync() :: Error :: Failed to update user with email dfhb.
+2024-02-08 10:41:03 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:44:25 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:44:25 :: Repo.UpdateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 10:44:25 :: AuthService.UpdateUserAsync() :: Error :: Failed to update user with email dg.
+2024-02-08 10:44:25 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:46:36 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:46:36 :: Repo.UpdateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 10:46:36 :: AuthService.UpdateUserAsync() :: Error :: Failed to update user with email dcb.
+2024-02-08 10:46:36 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:47:33 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:47:33 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:48:16 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:48:16 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:48:20 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:48:20 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:48:52 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:48:52 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:48:59 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:48:59 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:49:05 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:49:05 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:49:16 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:49:16 :: Repo.UpdateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 10:49:16 :: AuthService.UpdateUserAsync() :: Error :: Failed to update user with email fdh.
+2024-02-08 10:49:16 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 10:49:31 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:49:31 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:49:40 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:49:40 :: AuthService.UpdateUserAsync() :: Info :: User with email cxb was successfully updated.
+2024-02-08 10:49:40 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 10:49:50 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:49:50 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 10:51:54 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 10:51:54 :: AuthService.UpdateUserAsync() :: Info :: User with email dsg was successfully updated.
+2024-02-08 10:51:54 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 11:00:38 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:00:38 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:13:17 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:13:17 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:17:44 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:17:44 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:22:28 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:22:28 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:26:34 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 4 was not found.
+2024-02-08 11:26:34 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 4 was not found.
+2024-02-08 11:26:40 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:26:40 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:27:30 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:27:30 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:31:00 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:31:00 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:31:41 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:31:41 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:35:06 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 11:35:07 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 11:35:07 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 11:35:11 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:35:11 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:36:48 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:36:48 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:39:42 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:39:42 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:40:42 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 11:40:43 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 11:40:43 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 11:40:49 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:40:49 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:41:06 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 11:41:07 :: Repo.UpdateAsync() :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 11:41:07 :: AuthService.UpdateUserAsync() :: Error :: Failed to update user with email .
+2024-02-08 11:41:07 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 11:44:57 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:44:57 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:50:58 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:50:58 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:51:15 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 11:51:15 :: AuthService.UpdateUserAsync() :: Info :: User with email gfhndsg was successfully updated.
+2024-02-08 11:51:15 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 11:57:00 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:57:00 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 11:57:19 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 11:57:19 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 11:57:19 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 12:00:04 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:00:04 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:00:09 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 12:00:09 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 12:00:09 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 12:02:06 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:02:06 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:02:10 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 12:02:10 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 12:02:10 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 12:03:04 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:03:04 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:03:12 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 12:03:12 :: AuthService.UpdateUserAsync() :: Info :: User with email gfhndsg was successfully updated.
+2024-02-08 12:03:12 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 12:05:10 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:05:10 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:05:14 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 12:05:14 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 12:05:14 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 12:08:08 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:08:08 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:08:14 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 12:08:14 :: AuthService.UpdateUserAsync() :: Info :: User with email gfhndsg was successfully updated.
+2024-02-08 12:08:14 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 12:08:29 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:08:29 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:09:03 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 0
+2024-02-08 12:09:03 :: AuthService.UpdateUserAsync() :: Info :: User with id 0 was not found.
+2024-02-08 12:09:03 :: UpdateUserViewModel.UpdateUser() :: Info :: User was not updated successfully.
+2024-02-08 12:09:20 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:09:20 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:09:45 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 12:09:45 :: AuthService.UpdateUserAsync() :: Info :: User with email magnus@domain.com was successfully updated.
+2024-02-08 12:09:45 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 12:12:22 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:12:22 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:12:39 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 12:12:39 :: AuthService.UpdateUserAsync() :: Info :: User with email magnus@domain.com was successfully updated.
+2024-02-08 12:12:39 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 12:13:07 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 12:13:07 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.

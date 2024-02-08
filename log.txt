@@ -744,3 +744,8 @@
 2024-02-08 12:12:39 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
 2024-02-08 12:13:07 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
 2024-02-08 12:13:07 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 12:25:54 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:25:54 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:26:07 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
+2024-02-08 12:26:08 :: AuthService.UpdateUserAsync() :: Info :: User with email magnus@domain.com was successfully updated.
+2024-02-08 12:26:08 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.

@@ -29,10 +29,11 @@ namespace Presentation.WPF.ViewModels
         [ObservableProperty]
         private UpdateUserFormModel _form = new UpdateUserFormModel();
 
-        private string _email;
-        private string _firstName;
-        private string _lastName;
         private int _userId;
+        private string _firstName = "";
+        private string _lastName = "";
+        private string _email = "";
+
 
         public int UserId
         {
@@ -42,17 +43,6 @@ namespace Presentation.WPF.ViewModels
                 _userId = value;
                 OnPropertyChanged(nameof(UserId));
                 Form.Id = value;
-            }
-        }
-
-        public string Email
-        {
-            get => _email;
-            set
-            {
-                _email = value;
-                OnPropertyChanged(nameof(Email));
-                OnPropertyChanged(nameof(CombinedEmail));
             }
         }
 
@@ -78,6 +68,17 @@ namespace Presentation.WPF.ViewModels
             }
         }
 
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                _email = value;
+                OnPropertyChanged(nameof(Email));
+                OnPropertyChanged(nameof(CombinedEmail));
+            }
+        }
+
         public string CombinedFirstName => $"{FirstName} {Form.FirstName}";
 
         public string CombinedLastName => $"{LastName} {Form.LastName}";
@@ -88,22 +89,11 @@ namespace Presentation.WPF.ViewModels
 
         public string CombinedConfirmPassword => $"{Form.ConfirmPassword}";
 
-        private string _editableEmail;
-
-        public string EditableEmail
-        {
-            get => _editableEmail;
-            set
-            {
-                _editableEmail = value;
-                OnPropertyChanged(nameof(EditableEmail));
-            }
-        }
-
-        private string _editableFirstName;
-        private string _editableLastName;
-        private string _editablePassword;
-        private string _editableConfirmPassword;
+        private string _editableEmail = "";
+        private string _editableFirstName = "";
+        private string _editableLastName = "";
+        private string _editablePassword = "";
+        private string _editableConfirmPassword = "";
 
         public string EditableFirstName
         {
@@ -122,6 +112,16 @@ namespace Presentation.WPF.ViewModels
             {
                 _editableLastName = value;
                 OnPropertyChanged(nameof(EditableLastName));
+            }
+        }
+
+        public string EditableEmail
+        {
+            get => _editableEmail;
+            set
+            {
+                _editableEmail = value;
+                OnPropertyChanged(nameof(EditableEmail));
             }
         }
 

@@ -8,99 +8,111 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Presentation.WPF.ViewModels
+namespace Presentation.WPF.ViewModels;
+
+public class GetOneUserViewModel : ObservableObject
 {
-    public class GetOneUserViewModel : ObservableObject
+    private readonly IAuthService _authService;
+    private readonly IServiceProvider _serviceProvider;
+
+    public GetOneUserViewModel(IAuthService authService, IServiceProvider serviceProvider)
     {
-        private readonly IAuthService _authService;
-        private readonly IServiceProvider _serviceProvider;
+        _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+        _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
 
-        public GetOneUserViewModel(IAuthService authService, IServiceProvider serviceProvider)
+        GetUserCommand = new AsyncRelayCommand(GetUserAsync);
+        GoBackCommand = new RelayCommand(GoBack);
+    }
+
+    private string _email;
+    private string _firstName;
+    private string _lastName;
+    private string _roleName;
+
+    public string Email
+    {
+        get => _email;
+        set
         {
-            _authService = authService ?? throw new ArgumentNullException(nameof(authService));
-            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
-
-            GetUserCommand = new AsyncRelayCommand(GetUserAsync);
-            GoBackCommand = new RelayCommand(GoBack);
+            _email = value;
+            OnPropertyChanged(nameof(Email));
         }
+    }
 
-        private string _email;
-        private string _firstName;
-        private string _lastName;
-
-        public string Email
+    public string FirstName
+    {
+        get => _firstName;
+        set
         {
-            get => _email;
-            set
-            {
-                _email = value;
-                OnPropertyChanged(nameof(Email));
-            }
+            _firstName = value;
+            OnPropertyChanged(nameof(FirstName));
         }
+    }
 
-        public string FirstName
+    public string LastName
+    {
+        get => _lastName;
+        set
         {
-            get => _firstName;
-            set
-            {
-                _firstName = value;
-                OnPropertyChanged(nameof(FirstName));
-            }
+            _lastName = value;
+            OnPropertyChanged(nameof(LastName));
         }
+    }
 
-        public string LastName
+    public string RoleId
+    {
+        get => _roleName;
+        set
         {
-            get => _lastName;
-            set
-            {
-                _lastName = value;
-                OnPropertyChanged(nameof(LastName));
-            }
+            _roleName = value;
+            OnPropertyChanged(nameof(RoleId));
         }
+    }
 
-        public IAsyncRelayCommand GetUserCommand { get; }
 
-        public IRelayCommand GoBackCommand { get; }
+    public IAsyncRelayCommand GetUserCommand { get; }
 
-        private async Task GetUserAsync()
+    public IRelayCommand GoBackCommand { get; }
+
+    private async Task GetUserAsync()
+    {
+        try
         {
-            try
+            if (!string.IsNullOrWhiteSpace(Email))
             {
-                if (!string.IsNullOrWhiteSpace(Email))
+                var getOneUserDto = new GetOneUserDto { Email = Email };
+                var user = await _authService.GetUserByEmailAsync(getOneUserDto);
+
+                if (user != null)
                 {
-                    var getOneUserDto = new GetOneUserDto { Email = Email };
-                    var user = await _authService.GetUserByEmailAsync(getOneUserDto);
+                    FirstName = user.FirstName;
+                    LastName = user.LastName;
+                    RoleId = user.RoleId.ToString();
 
-                    if (user != null)
-                    {
-                        FirstName = user.FirstName;
-                        LastName = user.LastName;
-
-                        Logger.Log($"User with email {Email} was retrieved successfully.", "GetOneUserViewModel.GetUserAsync()", LogTypes.Info);
-                        MessageBox.Show($"User with email {Email} was retrieved successfully.\nName: {FirstName} {LastName}");
-                    }
-                    else
-                    {
-                        Logger.Log($"User with email {Email} was not found.", "GetOneUserViewModel.GetUserAsync()", LogTypes.Info);
-                        MessageBox.Show($"User with email {Email} was not found.");
-                    }
+                    Logger.Log($"User with email {Email} was retrieved successfully.", "GetOneUserViewModel.GetUserAsync()", LogTypes.Info);
+                    MessageBox.Show($"User with email {Email} was retrieved successfully.\nName: {FirstName} {LastName}");
                 }
                 else
                 {
-                    Logger.Log("Email is empty.", "GetOneUserViewModel.GetUserAsync()", LogTypes.Warning);
-                    MessageBox.Show("Please provide an email address.");
+                    Logger.Log($"User with email {Email} was not found.", "GetOneUserViewModel.GetUserAsync()", LogTypes.Info);
+                    MessageBox.Show($"User with email {Email} was not found.");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                Logger.Log(ex.Message, "GetOneUserViewModel.GetUserAsync()", LogTypes.Error);
+                Logger.Log("Email is empty.", "GetOneUserViewModel.GetUserAsync()", LogTypes.Warning);
+                MessageBox.Show("Please provide an email address.");
             }
         }
-
-        private void GoBack()
+        catch (Exception ex)
         {
-            var mainViewModel = _serviceProvider.GetService<MainViewModel>();
-            mainViewModel.CurrentViewModel = _serviceProvider.GetService<MainOptionsViewModel>();
+            Logger.Log(ex.Message, "GetOneUserViewModel.GetUserAsync()", LogTypes.Error);
         }
+    }
+
+    private void GoBack()
+    {
+        var mainViewModel = _serviceProvider.GetService<MainViewModel>();
+        mainViewModel.CurrentViewModel = _serviceProvider.GetService<MainOptionsViewModel>();
     }
 }

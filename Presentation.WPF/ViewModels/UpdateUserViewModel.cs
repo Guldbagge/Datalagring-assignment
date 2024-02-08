@@ -34,6 +34,16 @@ namespace Presentation.WPF.ViewModels
         private string _lastName = "";
         private string _email = "";
 
+        public string CombinedFirstName => $"{FirstName} {Form.FirstName}";
+
+        public string CombinedLastName => $"{LastName} {Form.LastName}";
+
+        public string CombinedEmail => $"{Email} {Form.Email}";
+
+        public string CombinedPassword => $"{Form.Password}";
+
+        public string CombinedConfirmPassword => $"{Form.ConfirmPassword}";
+
 
         public int UserId
         {
@@ -78,16 +88,6 @@ namespace Presentation.WPF.ViewModels
                 OnPropertyChanged(nameof(CombinedEmail));
             }
         }
-
-        public string CombinedFirstName => $"{FirstName} {Form.FirstName}";
-
-        public string CombinedLastName => $"{LastName} {Form.LastName}";
-
-        public string CombinedEmail => $"{Email} {Form.Email}";
-
-        public string CombinedPassword => $"{Form.Password}";
-
-        public string CombinedConfirmPassword => $"{Form.ConfirmPassword}";
 
         private string _editableEmail = "";
         private string _editableFirstName = "";
@@ -163,7 +163,7 @@ namespace Presentation.WPF.ViewModels
                         EditableEmail = user.Email;
 
                         Logger.Log($"User with ID {UserId} was retrieved successfully.", "UpdateUserViewModel.GetUserAsync()", LogTypes.Info);
-                        MessageBox.Show($"User with ID {UserId} was retrieved successfully.\nName: {FirstName} {LastName} {Email}");
+                        MessageBox.Show($"User with ID {UserId} was retrieved successfully.\nName: {FirstName} {LastName}");
                     }
                     else
                     {

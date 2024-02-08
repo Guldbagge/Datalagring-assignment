@@ -749,3 +749,137 @@
 2024-02-08 12:26:07 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 17
 2024-02-08 12:26:08 :: AuthService.UpdateUserAsync() :: Info :: User with email magnus@domain.com was successfully updated.
 2024-02-08 12:26:08 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 12:55:51 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:55:51 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 17 was retrieved successfully.
+2024-02-08 12:59:20 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: Before SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
+2024-02-08 12:59:20 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-02-08 12:59:20 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 1
+2024-02-08 12:59:20 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Mock<IProductRepository:2>.Object
+2024-02-08 12:59:20 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-02-08 12:59:20 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 12:59:20 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Mock<IOrderRepository:4>.Object
+2024-02-08 12:59:20 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
+2024-02-08 12:59:20 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: After SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
+2024-02-08 13:30:58 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 13:31:52 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 13:46:01 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 13:46:01 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:27:56 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:27:56 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:30:42 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:30:42 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:34:22 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:34:22 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:38:50 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:38:50 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:40:23 :: AuthService.GetUserByEmailAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:40:23 :: GetOneUserViewModel.GetUserAsync() :: Info :: User with email magnus@domain.com was retrieved successfully.
+2024-02-08 15:52:59 :: SignUpViewModel.SignUp() :: Info :: Before calling SignUpAsync
+2024-02-08 15:53:00 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
+2024-02-08 15:53:00 :: SignUpViewModel.SignUp() :: Info :: After calling SignUpAsync, result: True
+2024-02-08 15:53:00 :: SignUpViewModel.SignUp() :: Info :: User was created successfully.
+2024-02-08 15:53:24 :: AuthService.GetUserByIdAsync() :: Info :: User with ID 18 was retrieved successfully.
+2024-02-08 15:53:24 :: UpdateUserViewModel.GetUserAsync() :: Info :: User with ID 18 was retrieved successfully.
+2024-02-08 15:53:40 :: UpdateUserViewModel.UpdateUser() :: Info :: User ID to update: 18
+2024-02-08 15:53:40 :: AuthService.UpdateUserAsync() :: Info :: User with email test@domain.com was successfully updated.
+2024-02-08 15:53:40 :: UpdateUserViewModel.UpdateUser() :: Info :: User was updated successfully.
+2024-02-08 15:54:02 :: AuthService.RemoveUserAsync() :: Info :: User with email magnus@domain.com was successfully removed.
+2024-02-08 15:54:02 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email magnus@domain.com was successfully removed.
+2024-02-08 15:55:14 :: AuthService.RemoveUserAsync() :: Info :: User with email zelda@domain.com was successfully removed.
+2024-02-08 15:55:14 :: DeleteUserViewModel.DeleteUserAsync() :: Info :: User with email zelda@domain.com was successfully removed.
+2024-02-08 15:56:20 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-02-08 15:56:20 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=10, UserId=17, Quantity=3
+2024-02-08 15:56:20 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-02-08 15:56:20 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 15:56:20 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-02-08 15:56:20 :: Repo.CreateAsync() : _orderRepository :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 15:56:20 :: OrderService.CreateOrderAsync() :: Error :: OrderEntity is null after creation.
+2024-02-08 15:56:20 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: False
+2024-02-08 15:56:20 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was not placed successfully.
+2024-02-08 15:56:41 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-02-08 15:56:41 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=2, UserId=18, Quantity=3
+2024-02-08 15:56:42 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-02-08 15:56:42 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 15:56:42 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-02-08 15:56:42 :: Repo.CreateAsync() : _orderRepository :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 15:56:42 :: OrderService.CreateOrderAsync() :: Error :: OrderEntity is null after creation.
+2024-02-08 15:56:42 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: False
+2024-02-08 15:56:42 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was not placed successfully.
+2024-02-08 15:58:18 :: ProductFactory.Create :: Info :: AddProductDto created successfully.
+2024-02-08 15:58:18 :: AddProductViewModel.AddProduct() :: Info :: AddProductDto Information: ArticleNumber=16, Title=Melon, Description=Stora, Price=100, CategoryName=Frukt
+2024-02-08 15:58:18 :: AddProductViewModel.AddProduct() :: Info :: Before calling AddProductAsync
+2024-02-08 15:58:18 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-02-08 15:58:18 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 3
+2024-02-08 15:58:18 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Infrastructure.Repositories.ProductRepository
+2024-02-08 15:58:18 :: _productRepository :: Info :: Before SaveChangesAsync - ArticleNumber=16, Title=Melon, Description=Stora, Price=100, CategoryId=3
+2024-02-08 15:58:18 :: _productRepository :: Info :: After SaveChangesAsync - ArticleNumber=16, Title=Melon, Description=Stora, Price=100, CategoryId=3
+2024-02-08 15:58:18 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-02-08 15:58:18 :: AddProductViewModel.AddProduct() :: Info :: After calling AddProductAsync, result: True
+2024-02-08 15:58:18 :: AddProductViewModel.AddProduct() :: Info :: Product was created successfully.
+2024-02-08 15:58:58 :: GetOneProductViewModel.GetProductAsync() :: Info :: Product with article number 5 was retrieved successfully.
+2024-02-08 15:59:20 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 2 was retrieved successfully.
+2024-02-08 16:00:14 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-02-08 16:00:14 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=2, UserId=17, Quantity=10
+2024-02-08 16:00:14 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-02-08 16:00:14 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 16:00:14 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-02-08 16:00:15 :: Repo.CreateAsync() : _orderRepository :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 16:00:15 :: OrderService.CreateOrderAsync() :: Error :: OrderEntity is null after creation.
+2024-02-08 16:00:15 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: False
+2024-02-08 16:00:15 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was not placed successfully.
+2024-02-08 16:05:30 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-02-08 16:05:30 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=2, UserId=17, Quantity=1
+2024-02-08 16:05:30 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-02-08 16:05:30 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 16:05:30 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-02-08 16:05:31 :: Repo.CreateAsync() : _orderRepository :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 16:05:31 :: OrderService.CreateOrderAsync() :: Error :: OrderEntity is null after creation.
+2024-02-08 16:05:31 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: False
+2024-02-08 16:05:31 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was not placed successfully.
+2024-02-08 16:12:29 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-02-08 16:12:29 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=2, UserId=17, Quantity=1
+2024-02-08 16:12:29 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-02-08 16:12:29 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 16:12:29 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-02-08 16:12:31 :: Repo.CreateAsync() : _orderRepository :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 16:12:31 :: OrderService.CreateOrderAsync() :: Error :: OrderEntity is null after creation.
+2024-02-08 16:12:31 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: False
+2024-02-08 16:12:31 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was not placed successfully.
+2024-02-08 16:15:22 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-02-08 16:15:22 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=2, UserId=17, Quantity=1
+2024-02-08 16:15:22 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-02-08 16:15:22 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 16:15:22 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-02-08 16:18:22 :: Repo.CreateAsync() : _orderRepository :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 16:18:22 :: OrderService.CreateOrderAsync() :: Error :: OrderEntity is null after creation.
+2024-02-08 16:18:22 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: False
+2024-02-08 16:18:22 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was not placed successfully.
+2024-02-08 16:18:54 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-02-08 16:18:54 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=2, UserId=6, Quantity=1
+2024-02-08 16:18:54 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-02-08 16:18:54 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 16:18:54 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-02-08 16:19:09 :: Repo.CreateAsync() : _orderRepository :: Error :: An error occurred while saving the entity changes. See the inner exception for details.
+2024-02-08 16:19:09 :: OrderService.CreateOrderAsync() :: Error :: OrderEntity is null after creation.
+2024-02-08 16:19:09 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: False
+2024-02-08 16:19:09 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was not placed successfully.
+2024-02-08 16:19:59 :: OrderFactory.CreateOrderDto :: Info :: OrderDto created successfully.
+2024-02-08 16:19:59 :: PlaceOrderViewModel.PlaceOrder() :: Info :: OrderDto Information: ArticleNumber=2, UserId=6, Quantity=2
+2024-02-08 16:19:59 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Before calling PlaceOrderAsync
+2024-02-08 16:19:59 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 16:19:59 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Infrastructure.Repositories.OrderRepository
+2024-02-08 16:20:00 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
+2024-02-08 16:20:00 :: PlaceOrderViewModel.PlaceOrder() :: Info :: After calling PlaceOrderAsync, result: True
+2024-02-08 16:20:00 :: PlaceOrderViewModel.PlaceOrder() :: Info :: Order was placed successfully.
+2024-02-08 16:20:13 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 3 was not found.
+2024-02-08 16:21:00 :: GetOneOrderViewModel.GetOrderAsync() :: Info :: Order with ID 16 was retrieved successfully.
+2024-02-08 16:22:03 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: Before SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
+2024-02-08 16:22:03 :: ProductFactory.Create :: Info :: ProductEntity created successfully.
+2024-02-08 16:22:03 :: ProductService.AddProductAsync() :: Info :: CategoryId of the product entity: 1
+2024-02-08 16:22:03 :: ProductService.CreateProductAsync() :: Info :: _productRepository is Mock<IProductRepository:2>.Object
+2024-02-08 16:22:03 :: ProductService.CreateProductAsync() :: Info :: A product was created successfully.
+2024-02-08 16:22:03 :: CreateAsync_Should_Add_Product_To_Context_And_SaveChanges :: Info :: After SaveChangesAsync - ArticleNumber=Article1, Title=Product1, Description=Sample Description, Price=10,99, CategoryId=1
+2024-02-08 16:22:03 :: OrderFactory.CreateOrderEntity :: Info :: OrderEntity created successfully.
+2024-02-08 16:22:03 :: OrderService.CreateOrderAsync() :: Info :: _orderRepository is Mock<IOrderRepository:4>.Object
+2024-02-08 16:22:03 :: OrderService.CreateOrderAsync() :: Info :: An order was placed successfully.
+2024-02-08 16:22:03 :: AuthService.SignUpAsync() :: Info :: A user was created successfully.
